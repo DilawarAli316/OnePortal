@@ -1,5 +1,6 @@
 .App {
   font-family: sans-serif;
+  background-color: azure;
 }
 * {
   margin: 0;
@@ -7,7 +8,7 @@
   box-sizing: border-box;
 }
 .header {
-  background-color: aqua;
+  /* background-color: aqua; */
   min-height: 4rem;
   display: flex;
   align-items: center;
@@ -28,14 +29,17 @@ p:hover {
 .main-container {
   display: flex;
   min-height: calc(100vh - 4rem);
-  background-color: coral;
+  /* background-color: coral; */
 }
 .sidebar {
   display: flex;
   min-width: 100px;
-  background-color: cornsilk;
+  /* background-color: cornsilk; */
+  align-items: center;
 }
 .content {
   display: flex;
   flex-grow: 1;
+  padding-right: 100px;
+  justify-content: space-between;
 }
