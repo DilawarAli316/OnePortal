@@ -8,7 +8,7 @@ const Grid1 = () => {
   return (
     <Container fluid>
     <Row>
-      <Col><img src='/assets/widget.png' width={500} height={200} /></Col>
+      <Col>1 of 1</Col>
     </Row>
     <Row>
       <Col>1 of 2</Col>

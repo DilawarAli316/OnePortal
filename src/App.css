@@ -41,5 +41,5 @@ p:hover {
   display: flex;
   flex-grow: 1;
   padding-right: 100px;
-  justify-content: space-between;
+  justify-content: space-around;
 }

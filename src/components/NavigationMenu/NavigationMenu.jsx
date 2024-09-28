@@ -13,9 +13,22 @@ const navigationItems = [
   { icon: "/assets/SupportNotActive.svg", label: "Add" },
 ];
 
-const NavigationMenu = () => (
+const navigationItems2 = [
+  { icon: "/assets/comments-question.svg", label: "Home" },
+  { icon: "/assets/life-ring.svg", label: "Apps" },
+];
+
+const SideView = () => (
   <nav className={styles.navigationMenu}>
     {navigationItems.map((item, index) => (
+      <NavigationButton
+        key={item.label}
+        icon={item.icon}
+        isActive={index === 0}
+      />
+    ))}
+
+    {navigationItems2.map((item, index) => (
       <NavigationButton
         key={item.label}
         icon={item.icon}
@@ -25,4 +38,4 @@ const NavigationMenu = () => (
   </nav>
 );
 
-export default NavigationMenu;
+export default SideView;
