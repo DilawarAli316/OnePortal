@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Khub = () => {
+const Khub = () => {
   return (
     <div>Khub</div>
   )
 }
+
+export default Khub

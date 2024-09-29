@@ -20,7 +20,7 @@
 }
 p {
   padding: 5px;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 p:hover {
   cursor: pointer;
@@ -36,10 +36,4 @@ p:hover {
   min-width: 100px;
   /* background-color: cornsilk; */
   align-items: center;
-}
-.content {
-  display: flex;
-  flex-grow: 1;
-  padding-right: 100px;
-  justify-content: space-around;
 }

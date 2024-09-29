@@ -9,12 +9,21 @@ const UserActions = () => {
     <nav className={styles.userActions}>
       <button className={styles.actionButton} aria-label="Compliance">
         <span className={styles.iconWrapper}>
-          <span className={styles.icon}>shield</span>
+          <img
+            src="/assets/Header/BellNotActive.svg"
+            alt="User Avatar"
+            className={styles.icon}
+          />
         </span>
       </button>
       <button className={styles.actionButton} aria-label="Notifications">
         <span className={styles.iconWrapper}>
-          <span className={styles.icon}>bell</span>
+          <img
+            src="/assets/Header/ShieldNotActive.svg"
+            alt="User Avatar"
+            className={styles.icon}
+          />
+          {/* TODO:Buttonstates pressed*/}
         </span>
       </button>
       <img
@@ -23,7 +32,11 @@ const UserActions = () => {
         className={styles.userAvatar}
       />
       <button className={styles.menuButton} aria-label="Menu">
-        bars
+        <img
+          src="/assets/Header/Hamburger.svg"
+          alt="User Avatar"
+          className={styles.icon}
+        />
       </button>
     </nav>
   );

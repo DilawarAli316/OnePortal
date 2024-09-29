@@ -4,7 +4,6 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
 import styles from "./NavigationMenu.module.css";
-import { useNavigate } from "react-router-dom";
 
 const navigationItems = [
   { icon: "/assets/homeActive.svg", label: "/" },
@@ -19,52 +18,40 @@ const navigationItems2 = [
   { icon: "/assets/life-ring.svg", label: "/support" },
 ];
 
-const SideView = () => {
-  let navigate = useNavigate();
+const SideView = () => (
+  <div className={styles.navigationMenu}>
+    <Nav
+      defaultActiveKey="/"
+      style={{
+        flexDirection: "column",
+        display: "flex",
+        height: "100%",
+        justifyContent: "center",
+      }}
+    >
+      {navigationItems.map((item, index) => (
+        <Nav.Link href={item.label}>
+          <img style={{ cursor: "pointer" }} src={item.icon} alt="icon" />
+        </Nav.Link>
+      ))}
+    </Nav>
 
-  return (
-    <div className={styles.navigationMenu}>
-      <Nav
-        defaultActiveKey="/"
-        style={{
-          flexDirection: "column",
-          display: "flex",
-          height: "100%",
-          justifyContent: "center",
-          rowGap: "10%",
-        }}
-      >
-        {navigationItems.map((item, index) => (
-          <div
-          
-            onClick={() => {
-              navigate(item.label);
-              // localStorage.setItem('SubHeader' , false)
-            }}
-          >
-          
-            <img style={{cursor : 'pointer'}} src={item.icon} alt="icon" />
-          </div>
-        ))}
-      </Nav>
-
-      <Nav
-        defaultActiveKey="/"
-        style={{
-          flexDirection: "column",
-          display: "flex",
-          height: "100%",
-          justifyContent: "center",
-        }}
-      >
-        {navigationItems2.map((item, index) => (
-          <Nav.Link href={item.label}>
-            <img src={item.icon} alt="icon" />
-          </Nav.Link>
-        ))}
-      </Nav>
-    </div>
-  );
-};
+    <Nav
+      defaultActiveKey="/"
+      style={{
+        flexDirection: "column",
+        display: "flex",
+        height: "100%",
+        justifyContent: "center",
+      }}
+    >
+      {navigationItems2.map((item, index) => (
+        <Nav.Link href={item.label}>
+          <img style={{ cursor: "pointer" }} src={item.icon} alt="icon" />
+        </Nav.Link>
+      ))}
+    </Nav>
+  </div>
+);
 
 export default SideView;
