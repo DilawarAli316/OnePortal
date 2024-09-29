@@ -6,19 +6,16 @@ import styles from "./Grid1.module.css";
 
 const Grid1 = () => {
   return (
-    <Container fluid>
-    <Row>
-      <Col>1 of 1</Col>
-    </Row>
-    <Row>
-      <Col>1 of 2</Col>
-      <Col>2 of 2</Col>
-    </Row>
-    <Row>
-      <Col>1 of 2</Col>
-      <Col>2 of 2</Col>
-    </Row>
-  </Container>
+<div className=' bg-gray-200 m-4'>
+<div class="grid grid-cols-3 md:grid-cols-3 grid-rows-3 md:grid-rows-3 gap-2 md:gap-2   bg-gray-300 m-4">
+      {/* <div class="hidden md:block md:col-start-1 md:row-start-1 md:col-span-1 md:row-span-1 bg-gray-300 rounded-md p-10">0</div>
+      <div class="hidden md:block md:col-start-1 md:row-start-2 md:col-span-1 md:row-span-1 bg-gray-300 rounded-md p-10">1</div>
+      <div class="hidden md:block md:col-start-2 md:row-start-1 md:col-span-1 md:row-span-1 bg-gray-300 rounded-md p-10">2</div>
+      <div class="hidden md:block md:col-start-2 md:row-start-2 md:col-span-1 md:row-span-1 bg-gray-300 rounded-md p-10">3</div>
+      <div class="hidden md:block md:col-start-3 md:row-start-1 md:col-span-1 md:row-span-2 bg-gray-300 rounded-md p-10">4</div> */}
+      
+    </div>
+</div>
   )
 }
 
