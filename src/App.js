@@ -1,17 +1,22 @@
 import logo from "./logo.svg";
 import "./App.css";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
 import Header from "./components/Header/Header";
 import SideView from "./components/NavigationMenu/NavigationMenu";
-import Grid1 from "./components/Grid/Grid1";
-import Grid2 from "./components/Grid/Grid2";
+import Home from "./screen/Home";
+import Categories from "./screen/Categories";
 
 function App() {
   return (
     <div className="App">
-      
-        {/* Header */}
+
+    <React.Fragment>
+      <Router>
+
         <Header />
-        {/* Header */}
+
 
         <div
           style={{
@@ -23,25 +28,30 @@ function App() {
           Greetings message
         </div>
 
-        
-      
-
-      {/* Main Container */}
-      <div className="main-container">
-      
+        <div className="main-container">
         {/* Sidebar */}
         <div className="sidebar">
           <SideView />
         </div>
         {/* Sidebar */}
-        <div className="content">
-          <Grid1 />
-          <Grid2 />
-        </div>
-      </div>
-      {/* Main Container */}
 
-      <img style={{position : 'fixed', bottom : '40px', right : '40px'}} src="/assets/Ai-Test.svg" />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/categories" component={Categories} />
+
+          {/* <Route path="/organization" component={Organization} />
+          <Route component={Settings} /> */}
+        </Switch>
+       
+      </div>
+
+       
+      </Router>
+    </React.Fragment>
+    <img
+        style={{ position: "fixed", bottom: "40px", right: "40px" }}
+        src="/assets/Ai-Test.svg"
+      />
     </div>
   );
 }
