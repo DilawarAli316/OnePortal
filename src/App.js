@@ -15,25 +15,25 @@ function App() {
       <React.Fragment>
         <Router>
           <Header />
-          <div className="main-container">
+          <div className="flex">
             {/* Sidebar */}
             <div className="sidebar">
               <SideView />
             </div>
-            {/* Sidebar */}
-            
-            <Switch>
-              <Route exact path="/" render={() => (
-                <>
-
-                  <HomeHeader />
-                  <Home />
-                </>
-              )} />
-              <Route exact path="/categories" component={Categories} />
-              {/* <Route path="/organization" component={Organization} />
-              <Route component={Settings} /> */}
-            </Switch>
+            {/* Main content */}
+            <div className="flex-grow">
+              <Switch>
+                <Route exact path="/" render={() => (
+                  <div className="w-full ]">
+                    <HomeHeader />
+                    <Home />
+                  </div>
+                )} />
+                <Route exact path="/categories" component={Categories} />
+                {/* <Route path="/organization" component={Organization} />
+                <Route component={Settings} /> */}
+              </Switch>
+            </div>
           </div>
         </Router>
       </React.Fragment>

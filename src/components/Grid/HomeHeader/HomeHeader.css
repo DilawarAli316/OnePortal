@@ -1,11 +1,15 @@
+.btn{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 16px;
+gap: 8px;
 
+width: 125px;
+height: 40px;
 
-padding: 0px;
-gap: 26.62px;
-
-position: absolute;
-width: 559.12px;
-height: 71px;
-left: 114px;
-top: 124px;
-
+background: rgba(255, 255, 255, 0.5);
+border: 1px solid #FFFFFF;
+border-radius: 100px;
+}
