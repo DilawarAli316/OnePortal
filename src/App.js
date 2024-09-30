@@ -11,36 +11,40 @@ import Categories from "./screen/Categories";
 
 function App() {
   return (
-    <div className="App">
-      <React.Fragment>
-        <Router>
-          <Header />
-          <div className="flex">
-            {/* Sidebar */}
-            <div className="sidebar">
-              <SideView />
-            </div>
-            {/* Main content */}
-            <div className="flex-grow">
-              <Switch>
-                <Route exact path="/" render={() => (
-                  <div className="w-full ]">
-                    <HomeHeader />
-                    <Home />
-                  </div>
-                )} />
-                <Route exact path="/categories" component={Categories} />
-                {/* <Route path="/organization" component={Organization} />
-                <Route component={Settings} /> */}
-              </Switch>
-            </div>
-          </div>
-        </Router>
-      </React.Fragment>
-      <img
-        style={{ position: "fixed", bottom: "40px", right: "40px" }}
-        src="/assets/Ai-Test.svg"
-      />
+    <div className="App max-h-screen overflow-auto">
+      <div className="w-full" style={{ aspectRatio: '16/9', maxHeight: '100vh', overflow: 'auto' }}>
+        <div className="App h-full">
+          <React.Fragment>
+            <Router>
+              <Header />
+              <div className="flex">
+                {/* Sidebar */}
+                <div className="sidebar">
+                  <SideView />
+                </div>
+                {/* Main content */}
+                <div className="flex-grow">
+                  <Switch>
+                    <Route exact path="/" render={() => (
+                      <div className="w-full ]">
+                        <HomeHeader />
+                        <Home />
+                      </div>
+                    )} />
+                    <Route exact path="/categories" component={Categories} />
+                    {/* <Route path="/organization" component={Organization} />
+                    <Route component={Settings} /> */}
+                  </Switch>
+                </div>
+              </div>
+            </Router>
+          </React.Fragment>
+          <img
+            style={{ position: "fixed", bottom: "40px", right: "40px" }}
+            src="/assets/Ai-Test.svg"
+          />
+        </div>
+      </div>
     </div>
   );
 }
