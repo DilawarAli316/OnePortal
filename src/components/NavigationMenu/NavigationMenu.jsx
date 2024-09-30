@@ -31,7 +31,7 @@ const SideView = () => (
     >
       {navigationItems.map((item, index) => (
         <Nav.Link href={item.label}>
-          <img src={item.icon} alt="icon" />
+          <img style={{ cursor: "pointer" }} src={item.icon} alt="icon" />
         </Nav.Link>
       ))}
     </Nav>
@@ -47,7 +47,7 @@ const SideView = () => (
     >
       {navigationItems2.map((item, index) => (
         <Nav.Link href={item.label}>
-          <img src={item.icon} alt="icon" />
+          <img style={{ cursor: "pointer" }} src={item.icon} alt="icon" />
         </Nav.Link>
       ))}
     </Nav>

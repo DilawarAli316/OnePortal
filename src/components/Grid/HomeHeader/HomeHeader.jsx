@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./HomeHeader.css";
 
+
+
 const HomeHeader = () => {
+ const history = useHistory()
   return (
     <div className=" ">
       <div className="flex flex-row justify-between mx-[48px]">
@@ -25,15 +28,11 @@ const HomeHeader = () => {
           </div>
         </div>
 
-        <div className="flex flex-row gap-2">
-          <p className="m-0 text-[16px] font-extrabold">Workspace</p>
-          <p className="m-0 text-[#777FA1]">Team</p>
-          <p className="m-0 text-[#777FA1]">Overview</p>
-          <div className="flex flex-row btn items-center">
-           <img src="/assets/Home/plus.svg" alt="customize" />
-          <p className="m-0 text-[#777FA1]"> Cutomize</p>
-          </div>
-          
+
+</div>
+    
+
+        
         </div>
       </div>
     </div>
