@@ -10,7 +10,7 @@ const HomeHeader = () => {
       <div className="flex flex-row justify-between mx-[48px]">
         <div className="flex flex-row ... gap-[24px]">
           <img src="/assets/Home/weather.svg" alt="weather" />
-          <div class="flex flex-col ... font-AvenirRegular justify-center ">
+          <div className="flex flex-col ... font-AvenirRegular justify-center ">
             <div>
               <p className="font-AvenirRegular text-[26px] m-0">
                 Good Morning <b>Kasim!</b>{" "}

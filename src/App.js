@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import SideView from "./components/NavigationMenu/NavigationMenu";
 import Home from "./screen/Home/Home";
@@ -10,13 +10,16 @@ import HomeHeader from "./components/Grid/HomeHeader/HomeHeader";
 import Categories from "./screen/Categories/Categories";
 import Services from "./screen/Services/Services";
 import Teams from "./screen/Team/Teams";
-import Support from "./screen/Support/Support";
 import Khub from "./screen/Khub/Khub";
 import Add from "./screen/Add/Add";
 import Overview from "./screen/Overview/Overview";
 import TopNavTeam from "./screen/TopNavTeam/TopNavTeam";
+import Chat from "./screen/Support/Support";
+import ChatList from "./components/ChatList/ChatList";
+import ChatRoom from "./components/ChatRoom/ChatRoom";
 
 function App() {
+  const [showModal , setShowModal] = useState(false)
   return (
     <div className="App max-h-screen overflow-auto">
     <div
@@ -30,7 +33,14 @@ function App() {
             <div className="flex">
               {/* Sidebar */}
               <div className="sidebar">
-                <SideView />
+                <SideView showModal={showModal} setShowModal={setShowModal} />
+              {/* <Chat show={showModal} onHide={() => setShowModal(false)} /> */}
+             {showModal ?
+             <div style={{display : 'flex'}}>
+              <ChatList  /> 
+              <ChatRoom />
+             </div>
+              : null} 
               </div>
               {/* Main content */}
               <div className="flex-grow">
@@ -48,7 +58,7 @@ function App() {
                   <Route exact path="/categories" component={Categories} />
                   <Route path="/services" component={Services} />
                   <Route path="/teams" component={Teams} />
-                  <Route path="/support" component={Support} />
+                  <Route path="/chats" component={Chat} />
                   <Route path="/khub" component={Khub} />
                   <Route path="/add" component={Add} />
                   <Route
