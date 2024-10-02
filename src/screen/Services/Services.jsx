@@ -234,7 +234,7 @@ const ServiceCard = ({ icon, title, description }) => {
     >
     
       <div className="flex flex-row justify-between items-center w-full">
-        <img src={icon} alt="service icon" className="" />
+        <img src={icon} alt="service icon" className="pb-[19.24px]" />
         {hovered && (
           <div className="flex gap-[10px]">
             {/* Buttons shown on hover */}
@@ -245,8 +245,11 @@ const ServiceCard = ({ icon, title, description }) => {
           </div>
         )}
       </div>
+      <div className="gap-[10px]">
       <h3 className="font-avenir-heavy text-[21.65] text-black">{title}</h3>
       <p className="font-avenir-roman text-[14.43px]">{description}</p>
+      </div>
+     
     </div>
   );
 };
