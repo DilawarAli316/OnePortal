@@ -60,7 +60,7 @@ function App() {
                   <Route
                     path="/overview"
                     render={() => (
-                      <div className="w-full ]">
+                      <div className="w-full">
                         <HomeHeader />
                         <Overview />
                       </div>
@@ -69,7 +69,7 @@ function App() {
                   <Route
                     path="/top-nav-team"
                     render={() => (
-                      <div className="w-full ]">
+                      <div className="w-full ">
                         <HomeHeader />
                         <TopNavTeam />
                       </div>
@@ -78,7 +78,7 @@ function App() {
                   <Route
                     path="/customize"
                     render={() => (
-                      <div className="w-full ]">
+                      <div className="w-full">
                         <HomeHeader />
                         <Customize />
                       </div>

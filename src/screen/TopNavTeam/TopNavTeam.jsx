@@ -1,17 +1,3 @@
-// import React from "react";
-
-// const TopNavTeam = () => {
-//   return (
-//     <div className="flex flex-col pt-[55px] items-center ">
-//       <div className="w-[1508.57px] h-[849.54px] rounded-[20px] transition-transform hover:scale-103">
-//         <img src="/assets/Home/Team/team.svg" alt="Team" />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default TopNavTeam;
-
 
 import React, { useState, useEffect } from "react";
 

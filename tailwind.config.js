@@ -20,6 +20,8 @@ module.exports = {
         'avenir-medium': ['Avenir-Medium', 'Avenir', 'sans-serif'],
         'avenir-heavy': ['Avenir-Heavy', 'Avenir', 'sans-serif'],
         'avenir-black': ['Avenir-Black', 'Avenir', 'sans-serif'],
+        'avenir-roman': ['Avenir-Roman', 'Avenir', 'sans-serif'],
+
       },
 
     },
