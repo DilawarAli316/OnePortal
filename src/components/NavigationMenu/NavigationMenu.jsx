@@ -33,7 +33,7 @@ const SideView = ({ showModal, setShowModal }) => (
           onClick={(e) => {
             if (item.label === "/chats") {
               e.preventDefault(); // Prevents navigation
-              setShowModal(true); // Show the modal
+              setShowModal((prev) => !prev); // Show the modal
             }
           }}>
           <img style={{ cursor: "pointer" }} src={item.icon} alt="icon" />
