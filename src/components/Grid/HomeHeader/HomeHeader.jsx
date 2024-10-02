@@ -1,10 +1,18 @@
 import React from "react";
-import styles from "./HomeHeader.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation, useHistory } from "react-router-dom";
 import { Nav } from "react-bootstrap";
+import styles from "./HomeHeader.css";
 
 const HomeHeader = () => {
- const history = useHistory()
+  const location = useLocation();
+  const history = useHistory();
+
+  const isActive = (path) => {
+    return location.pathname === path
+      ? "!font-extrabold !text-[#000]"
+      : "!text-[#777FA1]";
+  };
+
   return (
     <div className=" ">
       <div className="flex flex-row justify-between mx-[48px]">
@@ -29,17 +37,34 @@ const HomeHeader = () => {
         </div>
 
         <div className="flex flex-row gap-2">
-       
-          
-          <Nav.Link href={'/'} className="m-0 !text-[16px] !font-extrabold !p-[5px]">Workspace</Nav.Link>
-          <Nav.Link href={'/top-nav-team'} className="m-0 !text-[#777FA1] !p-[5px]">Team</Nav.Link>
-          <Nav.Link href={'/overview'} className="m-0 !text-[#777FA1] !p-[5px]">Overview</Nav.Link>
-          {/* <p className="m-0 text-[#777FA1]">Overview</p> */}
-          <div className="flex flex-row btn items-center">
-           <img src="/assets/Home/plus.svg" alt="customize" />
-          <p className="m-0 text-[#777FA1]"> Cutomize</p>
-          </div>
-          
+          <Nav.Link
+            href={"/"}
+            className={`m-0 !text-[16px] !p-[5px] ${isActive("/")}`}
+          >
+            Workspace
+          </Nav.Link>
+          <Nav.Link
+            href={"/top-nav-team"}
+            className={`m-0 !p-[5px] ${isActive("/top-nav-team")}`}
+          >
+            Team
+          </Nav.Link>
+          <Nav.Link
+            href={"/overview"}
+            className={`m-0 !p-[5px] ${isActive("/overview")}`}
+          >
+            Overview
+          </Nav.Link>
+
+          <Nav.Link
+            href={"/customize"}
+            className={`m-0 ${isActive(
+              "/customize"
+            )} btn flex flex-row items-center`}
+          >
+            <img src="/assets/Home/plus.svg" alt="customize" className="" />
+            <p className="m-0 text-[#777FA1]">Customize</p>
+          </Nav.Link>
         </div>
       </div>
     </div>
