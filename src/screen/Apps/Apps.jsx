@@ -83,7 +83,7 @@ const Apps = () => {
               </div>
             </div>
 
-            {/* right nav voyaging here */}
+            {/* right nav voyaging herethere */}
 
             <div>
               <div className="flex flex-row justify-between w-full">
