@@ -9,7 +9,7 @@ import Header from "./components/Header/Header";
 import SideView from "./components/NavigationMenu/NavigationMenu";
 import Home from "./screen/Home/Home";
 import HomeHeader from "./components/Grid/HomeHeader/HomeHeader";
-import Categories from "./screen/Categories/Categories";
+import Apps from "./screen/Apps/Apps";
 import Services from "./screen/Services/Services";
 import Teams from "./screen/Team/Teams";
 import Support from "./screen/Support/Support";
@@ -51,7 +51,7 @@ function App() {
                       </div>
                     )}
                   />
-                  <Route exact path="/categories" component={Categories} />
+                  <Route exact path="/apps" component={Apps} />
                   <Route path="/services" component={Services} />
                   <Route path="/teams" component={Teams} />
                   <Route path="/support" component={Support} />

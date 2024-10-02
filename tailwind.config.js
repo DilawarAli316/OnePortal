@@ -13,6 +13,7 @@ module.exports = {
         brand: "#045257",
         green: "#045257",
         active: "#F6FAF7",
+        gray: "#777FA1",
       },
       fontFamily: {
         'avenir': ['Avenir', 'sans-serif'],

@@ -12,7 +12,7 @@ const navigationItems = [
   {
     activeIcon: "/assets/categoriesActive.svg",
     inactiveIcon: "/assets/categoriesNotactive.svg",
-    label: "Categories",
+    label: "Apps",
   },
   {
     activeIcon: "/assets/ServicesActive.svg",
