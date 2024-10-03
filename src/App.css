@@ -1,12 +1,12 @@
 .App {
   font-family: sans-serif;
-  background-color: #E2E6EA;
+  
 }
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 .header {
   /* background-color: aqua; */
   min-height: 4rem;
@@ -32,8 +32,8 @@ p:hover {
   /* background-color: coral; */
 }
 .sidebar {
-  display: flex;
-  min-width: 100px;
+  /* display: flex; */
+  /* min-width: 100px; */
   /* background-color: cornsilk; */
-  align-items: center;
+  /* align-items: center; */
 }

@@ -10,10 +10,21 @@ module.exports = {
           500: "#FF6363",
           800: "#FF1313",
         },
+        brand: "#045257",
+        green: "#045257",
+        active: "#F6FAF7",
+        gray: "#777FA1",
       },
       fontFamily: {
-        AvenirRegular: ["Avenir", "sans-serif"],
+        'avenir': ['Avenir', 'sans-serif'],
+        'avenir-light': ['Avenir-Light', 'Avenir', 'sans-serif'],
+        'avenir-medium': ['Avenir-Medium', 'Avenir', 'sans-serif'],
+        'avenir-heavy': ['Avenir-Heavy', 'Avenir', 'sans-serif'],
+        'avenir-black': ['Avenir-Black', 'Avenir', 'sans-serif'],
+        'avenir-roman': ['Avenir-Roman', 'Avenir', 'sans-serif'],
+
       },
+
     },
   },
   plugins: [],
