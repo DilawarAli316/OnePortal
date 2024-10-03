@@ -1,13 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
+
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
+
+import React from "react";
 import Header from "./components/Header/Header";
 import SideView from "./components/NavigationMenu/NavigationMenu";
 import Home from "./screen/Home/Home";
 import HomeHeader from "./components/Grid/HomeHeader/HomeHeader";
-import Categories from "./screen/Categories/Categories";
+import Apps from "./screen/Apps/Apps";
 import Services from "./screen/Services/Services";
 import Teams from "./screen/Team/Teams";
 import Khub from "./screen/Khub/Khub";
@@ -17,6 +19,8 @@ import TopNavTeam from "./screen/TopNavTeam/TopNavTeam";
 import Chat from "./screen/Support/Support";
 import ChatList from "./components/ChatList/ChatList";
 import ChatRoom from "./components/ChatRoom/ChatRoom";
+import Customize from "./screen/Customize/Customize";
+import Footer from "./components/Footer/Footer"; // Added Footer.jsx
 
 function App() {
   const [showModal , setShowModal] = useState(false)
@@ -26,7 +30,9 @@ function App() {
       className="w-full"
       style={{ aspectRatio: "16/9", maxHeight: "100vh", overflow: "auto" }}
     >
-      <div className="App h-full">
+       <Footer className="z-10" /> 
+       {/* <div class="absolute z-20 bottom-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none"><div class="w-[108rem] flex-none flex justify-end"> <img  class="w-[71.75rem] flex-none max-w-none dark:hidden" decoding="async"" src="/assets/Footer-image.png" alt="Footer" /></div></div> */}
+      <div className="App h-full z-50">
         <React.Fragment>
           <Router>
             <Header />
@@ -49,13 +55,13 @@ function App() {
                     exact
                     path="/"
                     render={() => (
-                      <div className="w-full ]">
+                      <div className="w-full">
                         <HomeHeader />
                         <Home />
                       </div>
                     )}
                   />
-                  <Route exact path="/categories" component={Categories} />
+                  <Route exact path="/apps" component={Apps} />
                   <Route path="/services" component={Services} />
                   <Route path="/teams" component={Teams} />
                   <Route path="/chats" component={Chat} />
@@ -64,7 +70,7 @@ function App() {
                   <Route
                     path="/overview"
                     render={() => (
-                      <div className="w-full ]">
+                      <div className="w-full">
                         <HomeHeader />
                         <Overview />
                       </div>
@@ -73,9 +79,18 @@ function App() {
                   <Route
                     path="/top-nav-team"
                     render={() => (
-                      <div className="w-full ]">
+                      <div className="w-full ">
                         <HomeHeader />
                         <TopNavTeam />
+                      </div>
+                    )}
+                  />
+                  <Route
+                    path="/customize"
+                    render={() => (
+                      <div className="w-full">
+                        <HomeHeader />
+                        <Customize />
                       </div>
                     )}
                   />
@@ -86,12 +101,15 @@ function App() {
             </div>
           </Router>
         </React.Fragment>
+       
         <img
           style={{ position: "fixed", bottom: "40px", right: "40px" }}
           src="/assets/Ai-Test.svg"
         />
       </div>
+     
     </div>
+    
   </div>
   );
 }

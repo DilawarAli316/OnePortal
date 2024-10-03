@@ -2,20 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* @font-face {
-  font-family: "Avenir";
-  src: url("../public/fonts/Avenir/AvenirLTStd-Medium.otf");
-} */
 @font-face {
-  font-family: "Avenir";
-  src: url("../public/fonts/Avenir/Avenir\ Regular.ttf"); 
+  font-family: 'Avenir';
+  src: url('../public/fonts/Avenir/Avenir Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir-Medium.otf';
+  src: url('../public/fonts/Avenir/AvenirLTStd-Medium.otf') format('otf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir-Heavy';
+  src: url('../public/fonts/Avenir/AvenirLTStd-Heavy.otf') format('otf');
+  font-weight: 700;
+  font-style: normal;
+}
+/* 
+@font-face {
+  font-family: 'Avenir-Light';
+  src: url('../public/fonts/Avenir/Avenir-Light.otf') format('otf'),
+       url('../public/fonts/Avenir/Avenir-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'Avenir-Medium';
+  src: url('../public/fonts/Avenir/Avenir-Medium.otf') format('woff'),
+       url('../public/fonts/Avenir/Avenir-Medium.otf') format('otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir-Heavy';
+  src: url('../public/fonts/Avenir/Avenir-Heavy.otf') format('otf'),
+       url('../public/fonts/Avenir/Avenir-Heavy.otf') format('otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir-Black';
+  src: url('../public/fonts/Avenir/Avenir-Black.otf') format('otf'),
+       url('../public/fonts/Avenir/Avenir-Black.otf') format('otf');
+  font-weight: 900;
+  font-style: normal;
+} */
 
 body, #root, .App {
   max-height: 1080px;
   overflow: auto;
+  background-color: #E2E6EA;
 }
 
 body {

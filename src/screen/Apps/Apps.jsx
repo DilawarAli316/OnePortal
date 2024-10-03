@@ -1,17 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-const Services = () => {
+const Apps = () => {
   const [animate, setAnimate] = useState(false);
 
-  // Array for button labels
-  const buttonLabels = [
-    "Digital Infrastructure",
-    "Operations Management",
-    "Government Experience",
-    "Training & Assessment",
-  ];
-
-  // Service card data
   const serviceCardsData = [
     {
       icon: "/assets/Services/tiles/announcements.svg",
@@ -69,43 +60,72 @@ const Services = () => {
         }`}
       >
         <div className="flex flex-col justify-start items-center gap-[25px]">
-          <div className="flex flex-col justify-start items-center gap-[43px]">
-            <div className="object-contain">
-              <img src="/assets/Services/Banner.svg" alt="Team" />
+          <div className="flex flex-row justify-between items-start w-full">
+            {/* left naving here */}
+            <div className="w-[364px]">
+              <div className="flex flex-col gap-[46px]">
+                <div>
+                  <h5 className="font-avenir-black text-[24.06px] text-black">
+                    Categories
+                  </h5>
+                </div>
+                <div className="flex flex-col items-start align-left">
+                  <h5 className="text-[#777FA1] font-avenir-medium text-[21.65px]">
+                    All Apps
+                  </h5>
+                  <h5 className="text-black font-avenir-medium text-[21.65px]">
+                    Workspace(20)
+                  </h5>
+                  <h5 className="text-[#777FA1] font-avenir-medium text-[21.65px]">
+                    Microsoft(20)
+                  </h5>
+                </div>
+              </div>
             </div>
-            <div className="object-contain">
-              <img src="/assets/Services/dots.svg" alt="Team" />
+
+            {/* right nav voyaging herethere */}
+
+            <div>
+              <div className="flex flex-row justify-between w-full">
+                <div>
+                  <h5 className="font-avenir-black text-[24.06px] text-black">
+                    Workspace
+                  </h5>
+                </div>
+
+                <div className="pl-4 flex flex-row justify-between items-center gap-[11px]">
+                  <p className="!m-0 font-avenir-roman text-[16.84px] text-black">
+                    Filter
+                  </p>
+
+                  <div className="flex flex-row gap-[7px] px-[8px] box-border justify-center items-center h-[39px] bg-white border border-[#E7E9EB] rounded-[120.278px]">
+                    <div>
+                      <h5 className="!m-0 font-avenir-roman text-[16.84px] text-[#888FAD]">
+                        All
+                      </h5>
+                    </div>
+
+                    <img
+                      className="object-contain"
+                      src="/assets/Services/chevron-down.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-[20px] justify-items-center items-start mt-[30px]">
+                {serviceCardsData.map((card, index) => (
+                  <ServiceCard
+                    key={index}
+                    icon={card.icon}
+                    title={card.title}
+                    description={card.description}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-
-          {/* Button Row */}
-          <div className="flex flex-row justify-center items-center gap-[20px] mt-[30px]">
-            <button className="flex justify-center items-center font-avenir-medium text-[16.84px] p-[9.62222px_19.2444px] gap-[12.03px]  h-[42.24px] bg-[#202020] rounded-[48.1111px] text-white">
-              All
-            </button>
-
-            {buttonLabels.map((label, index) => (
-              <button
-                key={index}
-                className="flex font-avenir-medium text-[16.84px] justify-center items-center p-[9.62222px_19.2444px] gap-[12.03px] h-[42.24px] bg-[#EDF0F2] rounded-[48.1111px] text-black"
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-
-          {/* Service Cards Section */}
-          <div className="flex flex-wrap gap-[20px] justify-center items-start mt-[30px]">
-            {serviceCardsData.map((card, index) => (
-              <ServiceCard
-                key={index}
-                icon={card.icon}
-                title={card.title}
-                description={card.description}
-              />
-            ))}
-          </div>
-
           <div className="flex flex-row items-center justify-between w-full">
             <div className="pl-4 flex flex-row justify-between items-center gap-[11px]">
               <p className="!m-0 font-avenir-roman text-[16.84px] text-[#888FAD] ">
@@ -191,4 +211,4 @@ const ServiceCard = ({ icon, title, description }) => {
   );
 };
 
-export default Services;
+export default Apps;
