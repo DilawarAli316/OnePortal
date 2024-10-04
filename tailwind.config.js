@@ -14,6 +14,11 @@ module.exports = {
         green: "#045257",
         active: "#F6FAF7",
         gray: "#777FA1",
+        skyblue: "#42A4EE",
+        
+        white:{
+          500: "#F1F2F6",
+        }
       },
       fontFamily: {
         'avenir': ['Avenir', 'sans-serif'],
