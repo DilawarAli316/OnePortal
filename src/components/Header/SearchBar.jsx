@@ -3,8 +3,8 @@ import React from "react";
 
 const SearchBar = ({ setLgShow }) => {
   return (
-    <div className="relative flex items-center gap-2 w-[420px] h-[50px] mx-auto">
-      <form className="w-full flex items-center">
+    <div className="relative flex items-center gap-2 w-[505.17px] h-[60px] mx-auto">
+      <form className="w-full flex items-center ">
         <label htmlFor="searchInput" className="sr-only">
           Search
         </label>
@@ -17,7 +17,7 @@ const SearchBar = ({ setLgShow }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-5 h-5 text-[#BBBFD0]"
+            className="w-5 h-5 tex text-[#BBBFD0]"
           >
             <path
               strokeLinecap="round"
@@ -31,7 +31,7 @@ const SearchBar = ({ setLgShow }) => {
           type="search"
           id="searchInput"
           placeholder="Search"
-          className="w-full pl-10 h-[50px] pr-4 py-2 border border-gray-300 opacity-50 rounded-full shadow-sm focus:outline-none focus:border-blue-500"
+          className="w-full pl-10 h-[50px] pr-4 py-2 border border-gray-300 opacity-50 rounded-full text-[16px] shadow-sm focus:outline-none focus:border-blue-500"
           onClick={() => setLgShow(true)} 
         />
       </form>
