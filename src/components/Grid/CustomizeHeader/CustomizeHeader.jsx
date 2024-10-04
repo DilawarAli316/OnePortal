@@ -23,7 +23,9 @@ const CustomizeHeader = ({bottom}) => {
            <img src="/assets/Ai-Test.svg" alt="weather"   />
            <NotificationCard/>
         </div>
-        {/* <img src="/assets/Home/weather.svg" alt="weather" />
+        {bottom ? 
+        <>
+        <img src="/assets/Home/weather.svg" alt="weather" />
          <div className="flex flex-col ... font-AvenirRegular justify-center ">
             <div>
               <p className="font-AvenirRegular text-[26px] m-0">
@@ -39,7 +41,10 @@ const CustomizeHeader = ({bottom}) => {
               <p className=" p-0 m-0 text-[#0764E6]">3 Notifications</p>
               <p className="p-0 m-0">waiting for your action today</p>
             </div>
-          </div> */}
+          </div>
+        </>
+         : null}
+        
         </div>
 
         <div className="flex flex-row gap-2">

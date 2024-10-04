@@ -160,13 +160,13 @@ const Services = () => {
         </div>
       </div>
       <img
-                            style={{
-                              position: "fixed",
-                              bottom: "40px",
-                              right: "40px",
-                            }}
-                            src="/assets/Ai-Test.svg"
-                          />
+        style={{
+          position: "fixed",
+          bottom: "40px",
+          right: "40px",
+        }}
+        src="/assets/Ai-Test.svg"
+      />
     </div>
   );
 };
