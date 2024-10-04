@@ -4,7 +4,7 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
 
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import SideView from "./components/NavigationMenu/NavigationMenu";
 import Home from "./screen/Home/Home";
@@ -21,6 +21,7 @@ import ChatList from "./components/ChatList/ChatList";
 import ChatRoom from "./components/ChatRoom/ChatRoom";
 import Customize from "./screen/Customize/Customize";
 import Footer from "./components/Footer/Footer"; // Added Footer.jsx
+import HomeWorkspace from "./components/HomeWorkspace/HomeWorkspace";
 
 function App() {
   const [showModal , setShowModal] = useState(false)
@@ -57,7 +58,9 @@ function App() {
                     render={() => (
                       <div className="w-full">
                         <HomeHeader />
-                        <Home />
+                        {/* <Home /> */}
+
+                        <HomeWorkspace />
                       </div>
                     )}
                   />

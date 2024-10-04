@@ -1,0 +1,181 @@
+.card-01 {
+
+padding: 20px;
+gap: 12px;
+
+
+}
+
+.dotL {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dotM {
+    width: 6px;
+    height: 6px;
+    background: #27BD50;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.mx-[48px] {
+    margin-left: 48px;
+    margin-right: 48px;
+  }
+  
+  .pt-[55px] {
+    padding-top: 55px;
+  }
+  
+  .gap-[29px] {
+    gap: 29px;
+  }
+  
+  .gap-[24px] {
+    gap: 24px;
+  }
+  
+  .w-[668px] {
+    width: 668px;
+  }
+  
+  .h-[184px] {
+    height: 184px;
+  }
+  
+  .bg-white {
+    background-color: white;
+  }
+  
+  .rounded-[20px] {
+    border-radius: 20px;
+  }
+  
+  .p-4 {
+    padding: 16px;
+  }
+  
+  .transition-transform {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover\:scale-103:hover {
+    transform: scale(1.03);
+  }
+  
+  .pb-[12px] {
+    padding-bottom: 12px;
+  }
+  
+  .text-[14px] {
+    font-size: 14px;
+  }
+  
+  .font-Avenir-Heavy {
+    font-family: 'Avenir-Heavy';
+  }
+  
+  .mb-2 {
+    margin-bottom: 8px;
+  }
+  
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  
+  .overflow-y-scroll {
+    overflow-y: scroll;
+  }
+  
+  .h-[120px] {
+    height: 120px;
+  }
+  
+  .dotL {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .dotM {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .text-brand {
+    color: #007BFF; /* Replace with your desired brand color */
+  }
+  
+  .font-Avenir-Medium {
+    font-family: 'Avenir-Medium';
+  }
+  
+  .font-Avenir {
+    font-family: 'Avenir';
+  }
+  
+  .p-4 {
+    padding: 16px;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .flex-row {
+    flex-direction: row;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .rounded-[8px] {
+    border-radius: 8px;
+  }
+  
+  .px-[8px] {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .py-[12px] {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  .card-01 {
+
+    padding: 20px;
+    gap: 12px;
+    
+    
+    }
+    
+    .dotL {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .dotM {
+        width: 6px;
+        height: 6px;
+        background: #27BD50;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    
+
