@@ -11,6 +11,7 @@ const InitialHome = () => {
           {/* <Grid1 /> */}
           {/* <Grid2 /> */}
           <HomeWorkspace />
+         
         </div>
 
      

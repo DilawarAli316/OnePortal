@@ -2,7 +2,12 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Switch, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+} from "react-router-dom";
 
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
@@ -22,98 +27,111 @@ import ChatRoom from "./components/ChatRoom/ChatRoom";
 import Customize from "./screen/Customize/Customize";
 import Footer from "./components/Footer/Footer"; // Added Footer.jsx
 import HomeWorkspace from "./components/HomeWorkspace/HomeWorkspace";
+import InitialHome from "./screen/InitialHome/InitialHome";
+import CustomizeHeader from "./components/Grid/CustomizeHeader/CustomizeHeader";
 
 function App() {
-  const [showModal , setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="App max-h-screen overflow-auto">
-    <div
-      className="w-full"
-      style={{ aspectRatio: "16/9", maxHeight: "100vh", overflow: "auto" }}
-    >
-       <Footer className="z-10" /> 
-       {/* <div class="absolute z-20 bottom-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none"><div class="w-[108rem] flex-none flex justify-end"> <img  class="w-[71.75rem] flex-none max-w-none dark:hidden" decoding="async"" src="/assets/Footer-image.png" alt="Footer" /></div></div> */}
-      <div className="App h-full z-50">
-        <React.Fragment>
-          <Router>
-            <Header />
-            <div className="flex">
-              {/* Sidebar */}
-              <div className="sidebar">
-                <SideView showModal={showModal} setShowModal={setShowModal} />
-              {/* <Chat show={showModal} onHide={() => setShowModal(false)} /> */}
-             {showModal ?
-             <div style={{display : 'flex'}}>
-              <ChatList  /> 
-              <ChatRoom />
-             </div>
-              : null} 
-              </div>
-              {/* Main content */}
-              <div className="flex-grow">
-                <Switch>
-                  <Route
-                    exact
-                    path="/"
-                    render={() => (
-                      <div className="w-full">
-                        <HomeHeader />
-                        {/* <Home /> */}
+      <div
+        className="w-full"
+        style={{ aspectRatio: "16/9", maxHeight: "100vh", overflow: "auto" }}
+      >
+        <Footer className="z-10" />
+        {/* <div class="absolute z-20 bottom-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none"><div class="w-[108rem] flex-none flex justify-end"> <img  class="w-[71.75rem] flex-none max-w-none dark:hidden" decoding="async"" src="/assets/Footer-image.png" alt="Footer" /></div></div> */}
+        <div className="App h-full z-50">
+          <React.Fragment>
+            <Router>
+              <Header />
+              <div className="flex">
+                {/* Sidebar */}
+                <div className="sidebar">
+                  <SideView showModal={showModal} setShowModal={setShowModal} />
+                  {/* <Chat show={showModal} onHide={() => setShowModal(false)} /> */}
+                  {showModal ? (
+                    <div style={{ display: "flex" }}>
+                      <ChatList />
+                      <ChatRoom />
+                    </div>
+                  ) : null}
+                </div>
+                {/* Main content */}
+                <div className="flex-grow">
+                  <Switch>
+                    <Route
+                      exact
+                      path="/"
+                      render={() => (
+                        <div className="w-full">
+                          <HomeHeader />
+                          {/* <Home /> */}
+                          <Home />
+                          
+                        </div>
+                      )}
+                    />
+                    <Route
+                      exact
+                      path="/intro"
+                      render={() => (
+                        <div className="w-full">
+                          {/* <HomeHeader /> */}
+                          {/* <Home /> */}
 
-                        <HomeWorkspace />
-                      </div>
-                    )}
-                  />
-                  <Route exact path="/apps" component={Apps} />
-                  <Route path="/services" component={Services} />
-                  <Route path="/teams" component={Teams} />
-                  <Route path="/chats" component={Chat} />
-                  <Route path="/khub" component={Khub} />
-                  <Route path="/add" component={Add} />
-                  <Route
-                    path="/overview"
-                    render={() => (
-                      <div className="w-full">
-                        <HomeHeader />
-                        <Overview />
-                      </div>
-                    )}
-                  />
-                  <Route
-                    path="/top-nav-team"
-                    render={() => (
-                      <div className="w-full ">
-                        <HomeHeader />
-                        <TopNavTeam />
-                      </div>
-                    )}
-                  />
-                  <Route
-                    path="/customize"
-                    render={() => (
-                      <div className="w-full">
-                        <HomeHeader />
-                        <Customize />
-                      </div>
-                    )}
-                  />
-                  {/* <Route path="/organization" component={Organization} />
+                          <CustomizeHeader bottom={true} />
+                          <InitialHome />
+                        </div>
+                      )}
+                    />
+                    <Route exact path="/apps" component={Apps} />
+                    <Route path="/services" component={Services} />
+                    <Route path="/teams" component={Teams} />
+                    <Route path="/chats" component={Chat} />
+                    <Route path="/khub" component={Khub} />
+                    <Route path="/add" component={Add} />
+                    <Route
+                      path="/overview"
+                      render={() => (
+                        <div className="w-full">
+                          <HomeHeader />
+                          <Overview />
+                        </div>
+                      )}
+                    />
+                    <Route
+                      path="/top-nav-team"
+                      render={() => (
+                        <div className="w-full ">
+                          <HomeHeader />
+                          <TopNavTeam />
+                        </div>
+                      )}
+                    />
+                    <Route
+                      path="/customize"
+                      render={() => (
+                        <div className="w-full">
+                          <CustomizeHeader />
+                          <Customize />
+                        </div>
+                      )}
+                    />
+                    {/* <Route path="/organization" component={Organization} />
               <Route component={Settings} /> */}
-                </Switch>
+                  </Switch>
+                </div>
               </div>
-            </div>
-          </Router>
-        </React.Fragment>
-       
-        <img
-          style={{ position: "fixed", bottom: "40px", right: "40px" }}
-          src="/assets/Ai-Test.svg"
-        />
+            </Router>
+          </React.Fragment>
+
+          {/* <img
+            style={{ position: "fixed", bottom: "40px", right: "40px" }}
+            src="/assets/Ai-Test.svg"
+          /> */}
+        </div>
       </div>
-     
     </div>
-    
-  </div>
   );
 }
 

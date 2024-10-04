@@ -146,7 +146,7 @@ const HomeWorkspace = () => {
               ))}
             </div>
           </div>
-            <img src="/assets/Home/dots.svg" alt="dots" width={35} height={35} />
+            <img style={{alignSelf : 'flex-end'}} src="/assets/Home/dots.svg" alt="dots" width={37} height={37} />
 
           {/* <div className="flex flex-row gap-[20px]">
             <div className="w-[170.331px] h-[132.09px] rounded-[20px] shadow-md transition-transform hover:scale-103">
