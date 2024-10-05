@@ -192,7 +192,7 @@ const ChatList = () => {
         "I have reviewed with Ibrahim el mansoor brought good impact over the logistics",
     },
     {
-      avatar: "/assets/Messenger/Avatar/Avatar2.png",
+      avatar: "/assets/Messenger/Avatar/AvatarN4.png",
       userName: "Mahmoud Alaam",
       timestamp: "01:43 PM",
       lastMessage: "Thanks, that would be great.",
@@ -205,6 +205,12 @@ const ChatList = () => {
     },
     {
       avatar: "/assets/Messenger/Avatar/Avatar4.png",
+      userName: "Malek Al Battah",
+      timestamp: "12:00 PM",
+      lastMessage: "Yes, please proceed.",
+    },
+    {
+      avatar: "/assets/Messenger/Avatar/AvatarN2.png",
       userName: "Malek Al Battah",
       timestamp: "12:00 PM",
       lastMessage: "Yes, please proceed.",
@@ -225,7 +231,7 @@ const ChatList = () => {
       lastMessage: "Sounds good?",
     },
     {
-      avatar: "/assets/Messenger/Avatar/Avatar7.png",
+      avatar: "/assets/Messenger/Avatar/AvatarN1.png",
       userName: "Alice Wonder",
       timestamp: "Yesterday",
       lastMessage: "I haven't checked available time...",
