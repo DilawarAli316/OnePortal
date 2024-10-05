@@ -15,6 +15,7 @@ module.exports = {
         active: "#F6FAF7",
         gray: "#777FA1",
         skyblue: "#42A4EE",
+        border: '#D0D4E4',
         
         white:{
           500: "#F1F2F6",
@@ -29,6 +30,9 @@ module.exports = {
         'avenir-roman': ['Avenir-Roman', 'Avenir', 'sans-serif'],
 
       },
+      spacing: {
+        '110': '110px',
+      }
 
     },
   },

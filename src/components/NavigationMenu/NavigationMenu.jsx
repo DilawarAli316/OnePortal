@@ -249,6 +249,8 @@ import React, { useState, useEffect } from "react";
 import Nav from "react-bootstrap/Nav";
 import NavigationButton from "./NavigationButton";
 import ShortcutModal from "../Shortcuts/ShortcutModal"; 
+import MessengerModal from "../MessengerModal/ChatListModal"; 
+import styles from "./NavigationMenu.module.css"; 
 
 const navigationItems = [
   {
@@ -269,7 +271,7 @@ const navigationItems = [
   {
     activeIcon: "/assets/MessengerActive.svg",
     inactiveIcon: "/assets/MessengerNotActive.svg",
-    label: "Teams",
+    label: "Messenger",
   },
   {
     activeIcon: "/assets/plus.svg",
@@ -294,27 +296,34 @@ const navigationItems2 = [
 const SideView = () => {
   const [activeLabel, setActiveLabel] = useState("/");
   const [hoveredLabel, setHoveredLabel] = useState(null);
-  const [showModal, setShowModal] = useState(false); // For custom modal visibility
+  const [showShortcutModal, setShowShortcutModal] = useState(false); // For Shortcut modal visibility
+  const [showMessengerModal, setShowMessengerModal] = useState(false); // For Messenger modal visibility
 
   // Track active route using window.location.pathname
   useEffect(() => {
     setActiveLabel(window.location.pathname);
   }, [window.location.pathname]);
 
-  // Handle Custom Modal
-  const handleShow = () => setShowModal(true);
-  const handleClose = () => setShowModal(false);
+  // Handle Modal visibility
+  const handleShowShortcutModal = () => setShowShortcutModal(true);
+  const handleCloseShortcutModal = () => setShowShortcutModal(false);
+  
+  const handleShowMessengerModal = () => setShowMessengerModal(true);
+  const handleCloseMessengerModal = () => setShowMessengerModal(false);
 
   return (
-    <div className="w-[135px] h-full flex flex-col justify-between items-center gap-[294px]">
+    <div className="w-[135px] flex flex-col justify-between items-center gap-[294px] sticky absolute z-50 top-0">
       <div className="h-[336.60px] w-full flex flex-col justify-start items-center">
+        
         <Nav className="flex flex-col items-center">
           {navigationItems.map((item, index) => (
             <Nav.Link
               key={index}
               onClick={() => {
                 if (item.label === "Add") {
-                  handleShow(); // Show modal when "Add" is clicked
+                  handleShowShortcutModal(); // Show Shortcut modal when "Add" is clicked
+                } else if (item.label === "Messenger") {
+                  handleShowMessengerModal(); // Show Messenger modal when "Messenger" is clicked
                 } else {
                   setActiveLabel(item.label); // Only navigate for other items
                   window.location.href = item.label; // Perform navigation
@@ -365,11 +374,15 @@ const SideView = () => {
         ))}
       </Nav>
 
-      {/* Custom Modal */}
-      <ShortcutModal show={showModal} onClose={handleClose}>
+      {/* Custom Shortcut Modal */}
+      <ShortcutModal show={showShortcutModal} onClose={handleCloseShortcutModal}>
         <h2 className="text-[24.06px] font-avenir-heavy">Add Quick Access</h2>
         {/* Modal content goes here */}
       </ShortcutModal>
+      {/* Custom Messenger Modal */}
+      <MessengerModal show={showMessengerModal} onClose={handleCloseMessengerModal}>
+        {/* Modal content goes here */}
+      </MessengerModal>
     </div>
   );
 };

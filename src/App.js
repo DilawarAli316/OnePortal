@@ -16,9 +16,8 @@ import Home from "./screen/Home/Home";
 import HomeHeader from "./components/Grid/HomeHeader/HomeHeader";
 import Apps from "./screen/Apps/Apps";
 import Services from "./screen/Services/Services";
-import Teams from "./screen/Team/Teams";
+import Messenger from "./screen/Messenger/Messenger";
 import Khub from "./screen/Khub/Khub";
-import Add from "./screen/Add/Add";
 import Overview from "./screen/Overview/Overview";
 import TopNavTeam from "./screen/TopNavTeam/TopNavTeam";
 import Chat from "./screen/Support/Support";
@@ -86,10 +85,10 @@ function App() {
                     />
                     <Route exact path="/apps" component={Apps} />
                     <Route path="/services" component={Services} />
-                    <Route path="/teams" component={Teams} />
+                    <Route path="/Messenger" component={Messenger} />
                     <Route path="/chats" component={Chat} />
                     <Route path="/khub" component={Khub} />
-                    <Route path="/add" component={Add} />
+                    {/* <Route path="/add" component={Add} /> */}
                     <Route
                       path="/overview"
                       render={() => (
