@@ -32,6 +32,7 @@ import TicketList from "./screen/TicketList/TicketList";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [showBackBtn, setShowBackBtn] = useState(false);
   return (
     <div className="App max-h-screen overflow-auto">
       <div
@@ -46,8 +47,8 @@ function App() {
               <Header />
               <div className="flex">
                 {/* Sidebar */}
-                <div className="sidebar">
-                  <SideView showModal={showModal} setShowModal={setShowModal} />
+                <div className="sidebar" >
+                  <SideView showModal={showModal} setShowModal={setShowModal} showBackBtn={showBackBtn} />
                   {/* <Chat show={showModal} onHide={() => setShowModal(false)} /> */}
                   {showModal ? (
                     <div style={{ display: "flex" }}>
@@ -88,7 +89,9 @@ function App() {
                     <Route path="/services" component={Services} />
                     <Route path="/Messenger" component={Messenger} />
                     <Route path="/chats" component={Chat} />
-                    <Route path="/khub" component={Khub} />
+                    <Route path="/khub" render={() => (
+                      <Khub setShowBackBtn={setShowBackBtn}  />
+                    )} />
                     <Route path="/TicketList" component={TicketList} />
                     <Route
                       path="/overview"

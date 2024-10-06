@@ -8,7 +8,6 @@ const InitialHome = () => {
   return (
     
       <div className="content">
-        <h1>hi</h1>
           {/* <Grid1 /> */}
           {/* <Grid2 /> */}
           <HomeWorkspace />

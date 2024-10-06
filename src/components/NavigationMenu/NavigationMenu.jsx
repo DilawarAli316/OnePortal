@@ -251,6 +251,17 @@ import NavigationButton from "./NavigationButton";
 import ShortcutModal from "../Shortcuts/ShortcutModal"; 
 import MessengerModal from "../MessengerModal/ChatListModal"; 
 import styles from "./NavigationMenu.module.css"; 
+import { useHistory } from "react-router-dom";
+
+
+const navigationItemsFirst = [
+  {
+    activeIcon: "/assets/angle-left-active.svg",
+    inactiveIcon: "/assets/angle-left.svg",
+    label: "Back",
+  },
+  
+];
 
 const navigationItems = [
   {
@@ -293,7 +304,8 @@ const navigationItems2 = [
   },
 ];
 
-const SideView = () => {
+const SideView = ({showBackBtn}) => {
+  const history = useHistory();
   const [activeLabel, setActiveLabel] = useState("/");
   const [hoveredLabel, setHoveredLabel] = useState(null);
   const [showShortcutModal, setShowShortcutModal] = useState(false); // For Shortcut modal visibility
@@ -312,7 +324,35 @@ const SideView = () => {
   const handleCloseMessengerModal = () => setShowMessengerModal(false);
 
   return (
-    <div className="w-[135px] flex flex-col justify-between items-center gap-[294px] sticky absolute z-20 top-0">
+    <div className="w-[135px] flex flex-col justify-between items-center gap-[200px] sticky absolute z-20 top-0">
+     {showBackBtn && <Nav className="flex flex-col items-center">
+          {navigationItemsFirst.map((item, index) => (
+            <Nav.Link
+              key={index}
+              onClick={() => {
+                history.goBack()
+                  // window.location.href = item.label; // Perform navigation
+              }}
+              onMouseEnter={() => setHoveredLabel(item.label)}
+              onMouseLeave={() => setHoveredLabel(null)}
+              className="text-black font-medium cursor-pointer"
+            >
+              <div className="flex flex-row items-center gap-[24px]">
+                <NavigationButton
+                btnStyle={'flex items-center justify-center'} 
+                  activeIcon={item.activeIcon}
+                  inactiveIcon={item.inactiveIcon}
+                  isActive={activeLabel === item.label}
+                />
+                {hoveredLabel === item.label && (
+                  <div className="text-sm">{item.label}</div>
+                )}
+              </div>
+            </Nav.Link>
+          ))}
+        </Nav>}
+     
+
       <div className="h-[336.60px] w-full flex flex-col justify-start items-center">
         
         <Nav className="flex flex-col items-center">

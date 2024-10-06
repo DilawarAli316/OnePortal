@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/HeaderKhub/Header.jsx"; // Uncomment if needed
 import UserGuideSection from "../../components/Khub/UserGuideSection";
 import FAQsSection from "../../components/Khub/FAQsSection";
@@ -72,7 +72,10 @@ const cardData = [
   },
 ];
 
-const Khub = () => {
+const Khub = ({setShowBackBtn}) => {
+  useEffect(() => {
+    setShowBackBtn(true)
+  },[])
   return (
     <div className="flex flex-col justify-start gap-[72.17px] items-center">
       {/* <Header /> */}
