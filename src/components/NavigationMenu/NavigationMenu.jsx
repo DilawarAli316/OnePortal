@@ -284,7 +284,7 @@ const navigationItems2 = [
   {
     activeIcon: "/assets/messageActive.svg",
     inactiveIcon: "/assets/messageNotActive.svg",
-    label: "Support",
+    label: "TicketList",
   },
   {
     activeIcon: "/assets/KnowledgeActive.svg",
@@ -312,7 +312,7 @@ const SideView = () => {
   const handleCloseMessengerModal = () => setShowMessengerModal(false);
 
   return (
-    <div className="w-[135px] flex flex-col justify-between items-center gap-[294px] sticky absolute z-50 top-0">
+    <div className="w-[135px] flex flex-col justify-between items-center gap-[294px] sticky absolute z-20 top-0">
       <div className="h-[336.60px] w-full flex flex-col justify-start items-center">
         
         <Nav className="flex flex-col items-center">

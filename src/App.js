@@ -20,7 +20,7 @@ import Messenger from "./screen/Messenger/Messenger";
 import Khub from "./screen/Khub/Khub";
 import Overview from "./screen/Overview/Overview";
 import TopNavTeam from "./screen/TopNavTeam/TopNavTeam";
-import Chat from "./screen/Support/Support";
+import Chat from "./screen/TicketList/TicketList";
 import ChatList from "./components/ChatList/ChatList";
 import ChatRoom from "./components/ChatRoom/ChatRoom";
 import Customize from "./screen/Customize/Customize";
@@ -28,6 +28,7 @@ import Footer from "./components/Footer/Footer"; // Added Footer.jsx
 import HomeWorkspace from "./components/HomeWorkspace/HomeWorkspace";
 import InitialHome from "./screen/InitialHome/InitialHome";
 import CustomizeHeader from "./components/Grid/CustomizeHeader/CustomizeHeader";
+import TicketList from "./screen/TicketList/TicketList";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -88,7 +89,7 @@ function App() {
                     <Route path="/Messenger" component={Messenger} />
                     <Route path="/chats" component={Chat} />
                     <Route path="/khub" component={Khub} />
-                    {/* <Route path="/add" component={Add} /> */}
+                    <Route path="/TicketList" component={TicketList} />
                     <Route
                       path="/overview"
                       render={() => (
