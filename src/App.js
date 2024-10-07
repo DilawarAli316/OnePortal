@@ -39,7 +39,7 @@ function App() {
         className="w-full"
         style={{ aspectRatio: "16/9", maxHeight: "100vh", overflow: "auto" }}
       >
-        <Footer className="z-10" />
+        {/* <Footer className="z-10" /> */}
         {/* <div class="absolute z-20 bottom-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none"><div class="w-[108rem] flex-none flex justify-end"> <img  class="w-[71.75rem] flex-none max-w-none dark:hidden" decoding="async"" src="/assets/Footer-image.png" alt="Footer" /></div></div> */}
         <div className="App h-full z-50">
           <React.Fragment>
@@ -68,7 +68,7 @@ function App() {
                           <HomeHeader />
                           {/* <Home /> */}
                           <Home />
-                          
+                          <Footer className="z-10" />
                         </div>
                       )}
                     />
