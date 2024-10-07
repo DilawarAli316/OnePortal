@@ -58,7 +58,7 @@ function App() {
                   ) : null}
                 </div>
                 {/* Main content */}
-                <div className="flex-grow">
+                <div className="flex-grow z-2">
                   <Switch>
                     <Route
                       exact
