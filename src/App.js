@@ -8,7 +8,7 @@ import {
   Switch,
   Routes,
   Redirect,
-  useLocation
+  useLocation,
 } from "react-router-dom";
 
 import React, { useState } from "react";
@@ -39,20 +39,18 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [showBackBtn, setShowBackBtn] = useState(false);
 
-
   return (
     <div className="App max-h-screen overflow-auto">
       <div
         className="w-full"
         style={{ aspectRatio: "16/9", maxHeight: "100vh", overflow: "auto" }}
       >
-
         {/* <Footer className="z-10" /> */}
         {/* <div class="absolute z-20 bottom-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none"><div class="w-[108rem] flex-none flex justify-end"> <img  class="w-[71.75rem] flex-none max-w-none dark:hidden" decoding="async"" src="/assets/Footer-image.png" alt="Footer" /></div></div> */}
         <div className="App h-full z-50">
           <React.Fragment>
             <Router>
-            <RouteWithVideoBackground />
+              <RouteWithVideoBackground />
 
               <Switch>
                 {localStorage.getItem("accessToken") ? (
@@ -147,7 +145,7 @@ function App() {
                       path="/login"
                       render={() => (
                         <div className="w-full">
-                  <OnBoardHeader />
+                          <OnBoardHeader />
                           <OnBoard />
                         </div>
                       )}
