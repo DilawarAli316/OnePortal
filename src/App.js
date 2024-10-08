@@ -135,12 +135,12 @@ function App() {
                   </>
                 ) : (
                   <>
-                  <OnBoardHeader />
                     <Route
                       exact
                       path="/login"
                       render={() => (
                         <div className="w-full">
+                  <OnBoardHeader />
                           <OnBoard />
                         </div>
                       )}

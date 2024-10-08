@@ -7,7 +7,7 @@ const OnBoardHeader = () => {
   const [lgShow, setLgShow] = useState(false);
 
   return (
-    <header className="w-full flex pb-10 items-center sticky absolute z-10 hover:z-50 top-0  bg-[linear-gradient(180deg,#E2E6EA_55.22%,rgba(226,230,234,0)_91.42%)]">
+    <header className="w-full flex pb-10 items-center sticky absolute z-10 hover:z-50 top-0  bg-white">
       <div className="w-full flex justify-between items-center  p-4">
        
         <img
