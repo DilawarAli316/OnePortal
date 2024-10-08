@@ -8,6 +8,7 @@ import {
   Switch,
   Routes,
   Redirect,
+  useLocation
 } from "react-router-dom";
 
 import React, { useState } from "react";
@@ -32,21 +33,27 @@ import CustomizeHeader from "./components/Grid/CustomizeHeader/CustomizeHeader";
 import TicketList from "./screen/TicketList/TicketList";
 import OnBoard from "./screen/OnBoard/OnBoard";
 import OnBoardHeader from "./components/OnBoardHeader/Header";
+import VideoBackground from "./components/VideoBackground/VideoBackground";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [showBackBtn, setShowBackBtn] = useState(false);
+
+
   return (
     <div className="App max-h-screen overflow-auto">
       <div
         className="w-full"
         style={{ aspectRatio: "16/9", maxHeight: "100vh", overflow: "auto" }}
       >
+
         {/* <Footer className="z-10" /> */}
         {/* <div class="absolute z-20 bottom-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none"><div class="w-[108rem] flex-none flex justify-end"> <img  class="w-[71.75rem] flex-none max-w-none dark:hidden" decoding="async"" src="/assets/Footer-image.png" alt="Footer" /></div></div> */}
         <div className="App h-full z-50">
           <React.Fragment>
             <Router>
+            <RouteWithVideoBackground />
+
               <Switch>
                 {localStorage.getItem("accessToken") ? (
                   <>
@@ -85,7 +92,7 @@ function App() {
                         exact
                         path="/intro"
                         render={() => (
-                          <div className="w-full">
+                          <div className="w-full z-10">
                             {/* <HomeHeader /> */}
                             {/* <Home /> */}
 
@@ -163,6 +170,11 @@ function App() {
       </div>
     </div>
   );
+}
+
+function RouteWithVideoBackground() {
+  const location = useLocation(); // Now it's used inside Router
+  return location.pathname === "/intro" ? <VideoBackground /> : null;
 }
 
 export default App;
