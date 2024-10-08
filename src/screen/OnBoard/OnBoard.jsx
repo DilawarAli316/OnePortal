@@ -7,9 +7,11 @@ import Footer from "../../components/Footer/Footer";
 
 const OnBoard = () => {
   const [update, setUpdate] = useState(false);
+  
   useEffect(() => {
     setInterval(() => {
       setUpdate(true)
+      
     },3000)
   },[])
   return (
@@ -17,7 +19,7 @@ const OnBoard = () => {
      {update ?
      <>
 
-      <AppRecommendation /> 
+      <AppRecommendation  /> 
       <Footer className="z-10" />
      </>
        : <LoginPage />} 

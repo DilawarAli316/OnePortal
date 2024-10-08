@@ -144,7 +144,7 @@ function App() {
                       exact
                       path="/login"
                       render={() => (
-                        <div className="w-full">
+                        <div className="w-full bg-[#fff]">
                           <OnBoardHeader />
                           <OnBoard />
                         </div>
