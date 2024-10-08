@@ -15,6 +15,8 @@ module.exports = {
         active: "#F6FAF7",
         gray: "#777FA1",
         skyblue: "#42A4EE",
+        border: '#D0D4E4',
+        idle: 'rgba(255, 255, 255, 0.5)',
         
         white:{
           500: "#F1F2F6",
@@ -28,6 +30,18 @@ module.exports = {
         'avenir-black': ['Avenir-Black', 'Avenir', 'sans-serif'],
         'avenir-roman': ['Avenir-Roman', 'Avenir', 'sans-serif'],
 
+      },
+      spacing: {
+        '110': '110px',
+      },
+      keyframes: {
+        slide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(10px)' },
+        },
+      },
+      animation: {
+        slide: 'slide 5s linear infinite',
       },
 
     },

@@ -2,49 +2,63 @@ import React, { useState, useEffect } from "react";
 
 const Apps = () => {
   const [animate, setAnimate] = useState(false);
+  const [activeTab, setActiveTab] = useState("All Apps"); // State for active tab
 
   const serviceCardsData = [
     {
       icon: "/assets/Services/tiles/announcements.svg",
       title: "Announcements",
       description: "Send mass publications to your group, department, company",
+      category: "All Apps",
     },
     {
       icon: "/assets/Services/tiles/link.svg",
       title: "Links",
       description: "Send mass publications to your group, department, company",
+      category: "All Apps",
     },
     {
       icon: "/assets/Services/tiles/coffee.svg",
       title: "Coffee App",
       description: "Send mass publications to your group, department, company.",
+      category: "Workspace",
     },
     {
       icon: "/assets/Services/tiles/sign.svg",
       title: "Sign",
       description: "Send mass publications to your group, department, company",
+      category: "Microsoft",
     },
     {
       icon: "/assets/Services/tiles/connect.svg",
       title: "Connect",
       description: "Send mass publications to your group, department, company",
+      category: "Workspace",
     },
     {
       icon: "/assets/Services/tiles/files.svg",
       title: "Files",
       description: "Send mass publications to your group, department, company",
+      category: "Microsoft",
     },
     {
       icon: "/assets/Services/tiles/mail.svg",
       title: "Mail",
       description: "Send mass publications to your group, department, company",
+      category: "All Apps",
     },
     {
       icon: "/assets/Services/tiles/learning.svg",
       title: "Learning",
       description: "Send mass publications to your group, department, company",
+      category: "All Apps",
     },
   ];
+
+  // Function to filter service cards based on the active tab
+  const filteredCards = serviceCardsData.filter(card => 
+    activeTab === "All Apps" || card.category === activeTab
+  );
 
   useEffect(() => {
     setAnimate(true);
@@ -61,7 +75,7 @@ const Apps = () => {
       >
         <div className="flex flex-col justify-start items-center gap-[25px]">
           <div className="flex flex-row justify-between items-start w-full">
-            {/* left naving here */}
+            {/* left navigation here */}
             <div className="w-[364px]">
               <div className="flex flex-col gap-[46px]">
                 <div>
@@ -70,21 +84,29 @@ const Apps = () => {
                   </h5>
                 </div>
                 <div className="flex flex-col items-start align-left">
-                  <h5 className="text-[#777FA1] font-avenir-medium text-[21.65px]">
+                  <h5
+                    className={`text-[#777FA1] font-avenir-medium text-[21.65px] cursor-pointer ${activeTab === "All Apps" ? "text-black" : ""}`}
+                    onClick={() => setActiveTab("All Apps")}
+                  >
                     All Apps
                   </h5>
-                  <h5 className="text-black font-avenir-medium text-[21.65px]">
+                  <h5
+                    className={`text-[#777FA1] font-avenir-medium text-[21.65px] cursor-pointer ${activeTab === "Workspace" ? "text-black" : ""}`}
+                    onClick={() => setActiveTab("Workspace")}
+                  >
                     Workspace(20)
                   </h5>
-                  <h5 className="text-[#777FA1] font-avenir-medium text-[21.65px]">
+                  <h5
+                    className={`text-[#777FA1] font-avenir-medium text-[21.65px] cursor-pointer ${activeTab === "Microsoft" ? "text-black" : ""}`}
+                    onClick={() => setActiveTab("Microsoft")}
+                  >
                     Microsoft(20)
                   </h5>
                 </div>
               </div>
             </div>
 
-            {/* right nav voyaging herethere */}
-
+            {/* right navigation here */}
             <div>
               <div className="flex flex-row justify-between w-full">
                 <div>
@@ -92,19 +114,16 @@ const Apps = () => {
                     Workspace
                   </h5>
                 </div>
-
                 <div className="pl-4 flex flex-row justify-between items-center gap-[11px]">
                   <p className="!m-0 font-avenir-roman text-[16.84px] text-black">
                     Filter
                   </p>
-
                   <div className="flex flex-row gap-[7px] px-[8px] box-border justify-center items-center h-[39px] bg-white border border-[#E7E9EB] rounded-[120.278px]">
                     <div>
                       <h5 className="!m-0 font-avenir-roman text-[16.84px] text-[#888FAD]">
                         All
                       </h5>
                     </div>
-
                     <img
                       className="object-contain"
                       src="/assets/Services/chevron-down.svg"
@@ -115,7 +134,7 @@ const Apps = () => {
               </div>
 
               <div className="grid grid-cols-3 gap-[20px] justify-items-center items-start mt-[30px]">
-                {serviceCardsData.map((card, index) => (
+                {filteredCards.map((card, index) => (
                   <ServiceCard
                     key={index}
                     icon={card.icon}
@@ -126,19 +145,19 @@ const Apps = () => {
               </div>
             </div>
           </div>
+
           <div className="flex flex-row items-center justify-between w-full">
             <div className="pl-4 flex flex-row justify-between items-center gap-[11px]">
               <p className="!m-0 font-avenir-roman text-[16.84px] text-[#888FAD] ">
                 Results per page
               </p>
 
-              <div className="flex flex-row  gap-[7px] px-[8px] box-border justify-center items-center  h-[39px] bg-white border border-[#E7E9EB] rounded-[120.278px]">
+              <div className="flex flex-row gap-[7px] px-[8px] box-border justify-center items-center h-[39px] bg-white border border-[#E7E9EB] rounded-[120.278px]">
                 <div className="">
                   <h5 className="!m-0 font-avenir-roman text-[16.84px] text-[#888FAD]">
                     12
                   </h5>
                 </div>
-
                 <img
                   className="object-contain"
                   src="/assets/Services/chevron-down.svg"
@@ -216,7 +235,20 @@ const ServiceCard = ({ icon, title, description }) => {
         <p className="font-avenir-roman text-[14.43px]">{description}</p>
       </div>
     </div>
+    // <div
+    //   className="flex flex-col items-center justify-center h-[241px] w-[189px] rounded-[20px] border border-[#E7E9EB] bg-white cursor-pointer transition-transform duration-300 transform hover:scale-105"
+    //   onMouseEnter={() => setHovered(true)}
+    //   onMouseLeave={() => setHovered(false)}
+    // >
+    //   <img src={icon} alt={title} className="mb-3" />
+    //   <h5 className="font-avenir-medium text-[20.06px] text-black">{title}</h5>
+    //   <p className="font-avenir-roman text-[#777FA1] text-[15.94px] text-center">{description}</p>
+    //   {hovered && (
+    //     <div className="absolute top-0 left-0 right-0 bottom-0 bg-white opacity-60 rounded-[20px] z-10"></div>
+    //   )}
+    // </div>
   );
 };
 
 export default Apps;
+
