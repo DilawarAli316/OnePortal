@@ -7,6 +7,7 @@ import {
   Route,
   Switch,
   Routes,
+  Redirect,
 } from "react-router-dom";
 
 import React, { useState } from "react";
@@ -29,6 +30,8 @@ import HomeWorkspace from "./components/HomeWorkspace/HomeWorkspace";
 import InitialHome from "./screen/InitialHome/InitialHome";
 import CustomizeHeader from "./components/Grid/CustomizeHeader/CustomizeHeader";
 import TicketList from "./screen/TicketList/TicketList";
+import OnBoard from "./screen/OnBoard/OnBoard";
+import OnBoardHeader from "./components/OnBoardHeader/Header";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -44,87 +47,111 @@ function App() {
         <div className="App h-full z-50">
           <React.Fragment>
             <Router>
-              <Header />
-              <div className="flex">
-                {/* Sidebar */}
-                <div className="sidebar" >
-                  <SideView showModal={showModal} setShowModal={setShowModal} showBackBtn={showBackBtn} />
-                  {/* <Chat show={showModal} onHide={() => setShowModal(false)} /> */}
-                  {showModal ? (
-                    <div style={{ display: "flex" }}>
-                      <ChatList />
-                      <ChatRoom />
-                    </div>
-                  ) : null}
-                </div>
-                {/* Main content */}
-                <div className="flex-grow z-2">
-                  <Switch>
-                    <Route
-                      exact
-                      path="/"
-                      render={() => (
-                        <div className="w-full">
-                          <HomeHeader />
-                          {/* <Home /> */}
-                          <Home />
-                          <Footer className="z-10" />
-                        </div>
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/intro"
-                      render={() => (
-                        <div className="w-full">
-                          {/* <HomeHeader /> */}
-                          {/* <Home /> */}
+              <Switch>
+                {localStorage.getItem("accessToken") ? (
+                  <>
+                    <Header />
+                    <div className="flex">
+                      {/* Sidebar */}
+                      <div className="sidebar">
+                        <SideView
+                          showModal={showModal}
+                          setShowModal={setShowModal}
+                          showBackBtn={showBackBtn}
+                        />
+                        {/* <Chat show={showModal} onHide={() => setShowModal(false)} /> */}
+                        {showModal ? (
+                          <div style={{ display: "flex" }}>
+                            <ChatList />
+                            <ChatRoom />
+                          </div>
+                        ) : null}
+                      </div>
 
-                          <CustomizeHeader bottom={true} />
-                          <InitialHome />
-                        </div>
-                      )}
-                    />
-                    <Route exact path="/apps" component={Apps} />
-                    <Route path="/services" component={Services} />
-                    <Route path="/Messenger" component={Messenger} />
-                    <Route path="/chats" component={Chat} />
-                    <Route path="/khub" render={() => (
-                      <Khub setShowBackBtn={setShowBackBtn}  />
-                    )} />
-                    <Route path="/TicketList" component={TicketList} />
+                      <div className="flex-grow z-2"></div>
+                      <Route
+                        exact
+                        path="/"
+                        render={() => (
+                          <div className="w-full">
+                            <HomeHeader />
+                            {/* <Home /> */}
+                            <Home />
+                            <Footer className="z-10" />
+                          </div>
+                        )}
+                      />
+                      <Route
+                        exact
+                        path="/intro"
+                        render={() => (
+                          <div className="w-full">
+                            {/* <HomeHeader /> */}
+                            {/* <Home /> */}
+
+                            <CustomizeHeader bottom={true} />
+                            <InitialHome />
+                          </div>
+                        )}
+                      />
+
+                      <Route exact path="/apps" component={Apps} />
+                      <Route path="/services" component={Services} />
+                      <Route path="/Messenger" component={Messenger} />
+                      <Route path="/chats" component={Chat} />
+                      <Route
+                        path="/khub"
+                        render={() => <Khub setShowBackBtn={setShowBackBtn} />}
+                      />
+                      <Route path="/TicketList" component={TicketList} />
+                      <Route
+                        path="/overview"
+                        render={() => (
+                          <div className="w-full">
+                            <HomeHeader />
+                            <Overview />
+                          </div>
+                        )}
+                      />
+                      <Route
+                        path="/top-nav-team"
+                        render={() => (
+                          <div className="w-full ">
+                            <HomeHeader />
+                            <TopNavTeam />
+                          </div>
+                        )}
+                      />
+                      <Route
+                        path="/customize"
+                        render={() => (
+                          <div className="w-full">
+                            <CustomizeHeader />
+                            <Customize />
+                          </div>
+                        )}
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                  <OnBoardHeader />
                     <Route
-                      path="/overview"
+                      exact
+                      path="/login"
                       render={() => (
                         <div className="w-full">
-                          <HomeHeader />
-                          <Overview />
+                          <OnBoard />
                         </div>
                       )}
                     />
-                    <Route
-                      path="/top-nav-team"
-                      render={() => (
-                        <div className="w-full ">
-                          <HomeHeader />
-                          <TopNavTeam />
-                        </div>
-                      )}
-                    />
-                    <Route
-                      path="/customize"
-                      render={() => (
-                        <div className="w-full">
-                          <CustomizeHeader />
-                          <Customize />
-                        </div>
-                      )}
-                    />
-                    {/* <Route path="/organization" component={Organization} />
-              <Route component={Settings} /> */}
-                  </Switch>
-                </div>
-              </div>
+
+                    <Route path="*">
+                      <Redirect to="/login" />
+                    </Route>
+                  </>
+                )}
+              </Switch>
             </Router>
           </React.Fragment>
 
