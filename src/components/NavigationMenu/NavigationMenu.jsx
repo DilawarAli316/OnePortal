@@ -267,7 +267,7 @@ const navigationItems = [
   {
     activeIcon: "/assets/homeActive.svg",
     inactiveIcon: "/assets/homeNotactive.svg",
-    label: "/",
+    label: "/home",
   },
   {
     activeIcon: "/assets/categoriesActive.svg",

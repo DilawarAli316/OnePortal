@@ -57,7 +57,7 @@ function AppRecommendation() {
   }, []);
   
   const proceedToHome = () => {
-    localStorage.setItem('accessToken', 'true')
+    
     window.location.href = '/intro'
 
   }
