@@ -118,7 +118,7 @@ function App() {
                       ) : null}
                     </div>
 
-                    <div className="flex-grow z-2"></div>
+                    {/* <div className="flex-grow"></div> */}
                     <Route
                       exact
                       path="/home"
@@ -146,7 +146,11 @@ function App() {
                     />
 
                     <Route exact path="/apps" component={Apps} />
-                    <Route exact path="/services" component={Services} />
+                    <Route exact path="/services" render={() => (
+                      <div className="w-full">
+                      <Services />
+                      </div>
+                    )} />
                     <Route exact path="/Messenger" component={Messenger} />
                     <Route exact path="/chats" component={Chat} />
                     <Route
