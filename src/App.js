@@ -88,6 +88,17 @@ function App() {
                   )}
                 />
 
+                <Route
+                  exact
+                  path="/login"
+                  render={() => (
+                    <div className="w-full bg-[#fff]">
+                      <OnBoardHeader />
+                      <OnBoard />
+                    </div>
+                  )}
+                />
+
                 <>
                   <Header />
                   <div className="flex">
