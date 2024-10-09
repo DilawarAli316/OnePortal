@@ -33,13 +33,14 @@ const ScreenSaver = () => {
         active
         size="lg"
         style={{
-          position: "absolute",
-          bottom: "15px",
-          left: "45%",
-          zIndex: "11",
-          fontSize: "2.5rem",
-          padding: "2.6rem",
-        }}
+    position: "absolute",
+    bottom: "15px",
+    left: "50%",
+    transform: "translateX(-50%)",  // Centers the button
+    zIndex: "11",
+    fontSize: "2.5rem",
+    padding: "2.6rem",
+  }}
         onClick={() =>  window.location.href = "/intro"}
       >
         Explore More
