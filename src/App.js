@@ -39,17 +39,19 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [showBackBtn, setShowBackBtn] = useState(false);
   const history = useHistory(); // Hook to programmatically navigate
-  let inactivityTimer;
 
   // Handle detecting inactivity
-  const resetInactivityTimer = () => {
-    clearTimeout(inactivityTimer);
-    inactivityTimer = setTimeout(() => {
-      if (window.location.pathname !== "/") {
-        window.location.href = "/"; // Redirect to ScreenSaver on inactivity
-      }
-    }, 20000); // 20 seconds
-  };
+let inactivityTimer;
+
+const resetInactivityTimer = () => {
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(() => {
+    if (window.location.pathname !== "/") {
+      window.location.href = "/"; // Redirect to ScreenSaver on inactivity
+    }
+  }, 180000); // 3 minutes (180,000 milliseconds)
+};
+
 
   useEffect(() => {
     // Add event listeners for user interactions to reset the inactivity timer
