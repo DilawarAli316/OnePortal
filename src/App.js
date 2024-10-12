@@ -35,6 +35,8 @@ import OnBoardHeader from "./components/OnBoardHeader/Header";
 import VideoBackground from "./components/VideoBackground/VideoBackground";
 import ScreenSaver from "./screen/ScreenSaver/ScreenSaver";
 import Profile from "./screen/Profile/Profile";
+import EntitiesDirectory from "./screen/EntitiesDirectory/EntitiesDirectory";
+import ServiceDirectory from "./screen/ServiceDirectory/ServiceDirectory";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -149,11 +151,15 @@ const resetInactivityTimer = () => {
                     />
 
                     <Route exact path="/apps" component={Apps} />
-                    <Route exact path="/services" render={() => (
-                      <div className="w-full">
-                      <Services />
-                      </div>
-                    )} />
+                    <Route
+                      exact
+                      path="/services"
+                      render={() => (
+                        <div className="w-full">
+                          <Services />
+                        </div>
+                      )}
+                    />
                     <Route exact path="/Messenger" component={Messenger} />
                     <Route exact path="/chats" component={Chat} />
                     <Route
@@ -204,17 +210,35 @@ const resetInactivityTimer = () => {
                       )}
                     />
 
+                    <Route
+                      exact
+                      path="/profile"
+                      render={() => (
+                        <div className="w-full">
+                          <Profile />
+                        </div>
+                      )}
+                    />
 
-<Route
-                  exact
-                  path="/profile"
-                  render={() => (
-                    <div className="w-full">
-                      <Profile />
-                    
-                    </div>
-                  )}
-                />
+                    <Route
+                      exact
+                      path="/EntitiesDirectory"
+                      render={() => (
+                        <div className="w-full">
+                          <EntitiesDirectory />
+                        </div>
+                      )}
+                    />
+
+                    <Route
+                      exact
+                      path="/ServiceDirectory"
+                      render={() => (
+                        <div className="w-full">
+                          <ServiceDirectory />
+                        </div>
+                      )}
+                    />
                     {/* <Route path="*">
                       <Redirect to="/intro" />
                     </Route> */}

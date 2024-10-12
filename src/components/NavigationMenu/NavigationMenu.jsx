@@ -22,12 +22,12 @@ const navigationItems = [
   {
     activeIcon: "/assets/MessengerActive.svg",
     inactiveIcon: "/assets/MessengerNotActive.svg",
-    label: "Teams",
+    label: "Messenger",
   },
   {
     activeIcon: "/assets/plus.svg",
     inactiveIcon: "/assets/plusNotactive.svg",
-    label: "Add"
+    label: "Add Shortcut"
   },
 ];
 
@@ -35,12 +35,12 @@ const navigationItems2 = [
   {
     activeIcon: "/assets/messageActive.svg",
     inactiveIcon: "/assets/messageNotActive.svg",
-    label: "Support",
+    label: "Technical Support",
   },
   {
     activeIcon: "/assets/KnowledgeActive.svg",
     inactiveIcon: "/assets/KnowledgeActive.svg",
-    label: "KHub",
+    label: "Knowledge Hub",
   },
 ];
 
