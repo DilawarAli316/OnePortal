@@ -33,12 +33,12 @@ const ScreenSaver = () => {
         style={{
           background: "#045257",
           position: "absolute",
-          bottom: "15px",
+          bottom: "65px",
           left: "50%",
           transform: "translateX(-50%)", // Centers the button
           zIndex: "11",
           fontSize: "2.5rem",
-          padding: "2.6rem",
+          padding: "1.6rem",
         }}
         onClick={() => (window.location.href = "/Home")}
       >
