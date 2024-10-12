@@ -41,7 +41,7 @@ const ScreenSaver = () => {
     fontSize: "2.5rem",
     padding: "2.6rem",
   }}
-        onClick={() =>  window.location.href = "/intro"}
+        onClick={() =>  window.location.href = "/Home"}
       >
         Explore More
       </Button>
