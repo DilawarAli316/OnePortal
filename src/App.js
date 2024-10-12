@@ -34,6 +34,7 @@ import OnBoard from "./screen/OnBoard/OnBoard";
 import OnBoardHeader from "./components/OnBoardHeader/Header";
 import VideoBackground from "./components/VideoBackground/VideoBackground";
 import ScreenSaver from "./screen/ScreenSaver/ScreenSaver";
+import Profile from "./screen/Profile/Profile";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -203,6 +204,17 @@ const resetInactivityTimer = () => {
                       )}
                     />
 
+
+<Route
+                  exact
+                  path="/profile"
+                  render={() => (
+                    <div className="w-full">
+                      <Profile />
+                    
+                    </div>
+                  )}
+                />
                     {/* <Route path="*">
                       <Redirect to="/intro" />
                     </Route> */}

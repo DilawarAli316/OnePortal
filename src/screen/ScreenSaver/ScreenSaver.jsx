@@ -28,23 +28,23 @@ const ScreenSaver = () => {
   //   }, []);
   return (
     <>
-      <Button
-        variant="dark"
-        active
-        size="lg"
+      <div
+        className="flex flex-row w-[85px]!bg-brand !font-avenir-medium rounded-full"
         style={{
-    position: "absolute",
-    bottom: "15px",
-    left: "50%",
-    transform: "translateX(-50%)",  // Centers the button
-    zIndex: "11",
-    fontSize: "2.5rem",
-    padding: "2.6rem",
-  }}
-        onClick={() =>  window.location.href = "/Home"}
+          background: "#045257",
+          position: "absolute",
+          bottom: "15px",
+          left: "50%",
+          transform: "translateX(-50%)", // Centers the button
+          zIndex: "11",
+          fontSize: "2.5rem",
+          padding: "2.6rem",
+        }}
+        onClick={() => (window.location.href = "/Home")}
       >
-        Explore More
-      </Button>
+        <div className="text-white font-avenir-medium pr-2"> Explore More </div>
+        <img src="/assets/swipe-indicator.svg" alt="" />
+      </div>
 
       <video
         autoPlay

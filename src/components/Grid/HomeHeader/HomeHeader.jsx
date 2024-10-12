@@ -30,7 +30,7 @@ const HomeHeader = () => {
                 <img src="/assets/Home/bell-sm.svg" alt="Notification Bell" />
               </div>
               <p className="p-0 m-0">You have</p>
-              <p className=" px-2 m-0 text-[#0764E6] underline underline-offset-2">3 Notifications</p>
+              <p  onClick={() => (window.location.href = "/Profile")} className=" px-2 m-0 text-[#0764E6] underline underline-offset-2">3 Notifications</p>
               <p className="p-0 m-0">waiting for your action today</p>
             </div>
           </div>
