@@ -17,7 +17,9 @@ const EntitiesDirectory = () => {
           animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[160px]"
         }`}
       >
-        <img src="/assets/Directories/Entities.svg" alt="Entities" />
+        <img 
+         onClick={() => (window.location.href = "/ServiceDirectory")}
+        src="/assets/Directories/Entities.svg" alt="Entities" />
       </div>
     </div>
   );

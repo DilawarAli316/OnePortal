@@ -8,6 +8,7 @@ const ServiceDirectory = () => {
     // Trigger the animation when the component is mounted
     setAnimate(true);
   }, []);
+  
 
   return (
     <div className="flex flex-col pt-[55px] items-center pb-[150px]">
@@ -16,7 +17,7 @@ const ServiceDirectory = () => {
           animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[160px]"
         }`}
       >
-        <img src="/assets/Profile/profile.svg" alt="Profile" />
+        <img src="/assets/Directories/Service.svg" alt="Service" />
       </div>
     </div>
   );
