@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <div className="footer-container" style={{zIndex : 1}}>
       {/* <video
         className="footer-video"
         src="/assets/background-video.mp4" // planning to replace with video 

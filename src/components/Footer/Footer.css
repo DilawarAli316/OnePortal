@@ -1,4 +1,4 @@
-.footer-container {
+/* .footer-container {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -18,6 +18,29 @@
   }
   
   .footer-content {
+    position: relative;
+   
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+   */
+
+   .footer-container {
+    position: fixed; /* or absolute depending on the layout */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Ensure it's behind the content */
+  }
+  
+  .footer-video {
+    width: 100%;
+    height: auto;
+  }
+  
+  .footer-content {
+    /* Add any other styles you need for footer content */
     position: relative;
    
     text-align: center;
