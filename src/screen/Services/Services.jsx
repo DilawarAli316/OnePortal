@@ -60,7 +60,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="flex flex-col pt-[55px] items-center pb-[150px]">
+    <div className="flex flex-col pt-[55px] items-center pb-[150px]" style={{zIndex : 3, position : 'relative'}}>
       <div
         className={`w-[1508.57px] h-[849.54px] rounded-[20px] transition-all duration-[3600ms] ease-in-out ${
           animate
@@ -180,20 +180,40 @@ const ServiceCard = ({ icon, title, description }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="flex flex-row justify-between items-center w-full">
+      <div className="flex flex-row justify-between items-start w-full">
         <img src={icon} alt="service icon" className="pb-[19.24px]" />
         {hovered && (
+          
+        <img src="/assets/Services/tiles/dotss.svg" width={'43px'} height={'28px'} />
+        )}
+        {/* {hovered && (
           <div className="flex gap-[10px]">
-            {/* Buttons shown on hover */}
-            <div className="flex flex-row justify-center items-center p-[9.62222px_19.2444px] gap-[12.03px] w-[101.03px] h-[42.1px] bg-gradient-to-r from-[#65C169] to-[#46A8DC] rounded-[48.1111px]">
-              <button className="text-white">Action 1</button>
+          
+            <div className="flex flex-row justify-center items-center p-[9.62222px_19.2444px] gap-[2.03px] w-[101.03px] h-[42.1px] bg-gradient-to-r from-[#65C169] to-[#46A8DC] rounded-[48.1111px]">
+              <button className="text-white">Launch</button>
+              <img src="/assets/Services/tiles/right-up.svg" width={16} height={16} />
+            </div>
+            <div className="flex flex-row justify-center items-center p-[9.62222px_19.2444px] gap-[2.03px] w-[101.03px] h-[42.1px]">
+              <button className="text-[#777FA1]">Discover now</button>
+              <img src="/assets/Services/tiles/rightup-grey.svg" width={16} height={16} />
             </div>
           </div>
-        )}
+        )} */}
       </div>
       <div className="gap-[10px]">
         <h3 className="font-avenir-heavy text-[21.65] text-black">{title}</h3>
-        <p className="font-avenir-roman text-[14.43px]">{description}</p>
+        {hovered ? <div className="flex gap-[10px]">
+            {/* Buttons shown on hover */}
+            <div className="flex flex-row justify-center items-center p-[9.62222px_19.2444px] gap-[2.03px] w-[101.03px] h-[42.1px] bg-gradient-to-r from-[#65C169] to-[#46A8DC] rounded-[48.1111px]">
+              <button className="text-white">Launch</button>
+              <img src="/assets/Services/tiles/right-up.svg" width={16} height={16} />
+            </div>
+            <div className="flex flex-row justify-center items-center p-[9.62222px_19.2444px] gap-[2.03px]  h-[42.1px]">
+              <button className="text-[#777FA1]">Discover now</button>
+              <img src="/assets/Services/tiles/rightup-grey.svg" width={16} height={16} />
+            </div>
+          </div> :  <p className="font-avenir-roman text-[14.43px]">{description}</p>}
+       
       </div>
     </div>
   );

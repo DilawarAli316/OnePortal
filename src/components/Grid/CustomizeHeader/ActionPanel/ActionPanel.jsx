@@ -7,6 +7,7 @@ import '../CustomizeHeader.css';
 
 const ActionPanel = () => {
   const handleDoneClick = () => {
+    window.location.href = "/Home";
     // Handle "Done, Let's go" button click
   };
 
