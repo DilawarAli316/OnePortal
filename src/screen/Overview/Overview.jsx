@@ -72,7 +72,8 @@ const Overview = () => {
     <div className="mx-[48px] flex flex-col pt-[55px] items-center">
       <div className="flex flex-row gap-[29px]">
         <div className="flex flex-col gap-[24px]">
-          <div className="card-01 overflow-hidden w-[668px] h-[184px] bg-white rounded-[20px] p-4 transition-transform hover:scale-103">
+
+           <div className="card-01 overflow-hidden w-[668px] h-[184px] bg-white rounded-[20px] p-4 transition-transform hover:scale-103">
             <div className="flex flex-row justify-between pb-[12px] items-center">
               <div className="flex flex-row justify-between">
                 <h3 className="text-[14px] font-Avenir-Heavy mb-2">Inbox</h3>

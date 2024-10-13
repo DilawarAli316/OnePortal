@@ -44,33 +44,33 @@ function App() {
   const history = useHistory(); // Hook to programmatically navigate
 
   // Handle detecting inactivity
-let inactivityTimer;
+// let inactivityTimer;
 
-const resetInactivityTimer = () => {
-  clearTimeout(inactivityTimer);
-  inactivityTimer = setTimeout(() => {
-    if (window.location.pathname !== "/") {
-      window.location.href = "/"; // Redirect to ScreenSaver on inactivity
-    }
-  }, 180000); // 3 minutes (180,000 milliseconds)
-};
+// const resetInactivityTimer = () => {
+//   clearTimeout(inactivityTimer);
+//   inactivityTimer = setTimeout(() => {
+//     if (window.location.pathname !== "/") {
+//       window.location.href = "/"; // Redirect to ScreenSaver on inactivity
+//     }
+//   }, 180000); // 3 minutes (180,000 milliseconds)
+// };
 
 
-  useEffect(() => {
-    // Add event listeners for user interactions to reset the inactivity timer
-    window.addEventListener("mousemove", resetInactivityTimer);
-    window.addEventListener("keydown", resetInactivityTimer);
+  // useEffect(() => {
+  //   // Add event listeners for user interactions to reset the inactivity timer
+  //   window.addEventListener("mousemove", resetInactivityTimer);
+  //   window.addEventListener("keydown", resetInactivityTimer);
 
-    // Set the inactivity timer when the app loads
-    resetInactivityTimer();
+  //   // Set the inactivity timer when the app loads
+  //   resetInactivityTimer();
 
-    return () => {
-      // Cleanup event listeners when component unmounts
-      window.removeEventListener("mousemove", resetInactivityTimer);
-      window.removeEventListener("keydown", resetInactivityTimer);
-      clearTimeout(inactivityTimer);
-    };
-  }, []);
+  //   return () => {
+  //     // Cleanup event listeners when component unmounts
+  //     window.removeEventListener("mousemove", resetInactivityTimer);
+  //     window.removeEventListener("keydown", resetInactivityTimer);
+  //     clearTimeout(inactivityTimer);
+  //   };
+  // }, []);
 
   return (
     <div className="App max-h-screen overflow-auto">

@@ -35,7 +35,7 @@ const navigationItems2 = [
   {
     activeIcon: "/assets/messageActive.svg",
     inactiveIcon: "/assets/messageNotActive.svg",
-    label: "Technical Support",
+    label: "TicketList",
   },
   {
     activeIcon: "/assets/KnowledgeActive.svg",

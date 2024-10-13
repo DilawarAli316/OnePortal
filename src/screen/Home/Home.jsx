@@ -6,24 +6,19 @@ import GridHomeWorksapce from "../../components/Grid/GridHomeWorksapce/GridHomeW
 
 const Home = () => {
   return (
-    
-      <div className="content">
-          {/* <Grid1 /> */}
-          {/* <Grid2 /> */}
-          <GridHomeWorksapce />
-          <img
-                            style={{
-                              position: "fixed",
-                              bottom: "40px",
-                              right: "40px",
-                            }}
-                            src="/assets/Ai-Test.svg"
-                          />
-                          
-        </div>
-
-     
-    
+    <div className="content">
+      {/* <Grid1 /> */}
+      {/* <Grid2 /> */}
+      <GridHomeWorksapce />
+      <img
+        style={{
+          position: "fixed",
+          bottom: "40px",
+          right: "40px",
+        }}
+        src="/assets/Ai-Test.svg"
+      />
+    </div>
   );
 };
 

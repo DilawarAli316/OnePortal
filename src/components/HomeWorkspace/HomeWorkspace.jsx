@@ -17,7 +17,7 @@ const HomeWorkspace = () => {
       sender: "Service Desk",
       time: "Today, 10:00 AM",
       dotColor: "#27BD50",
-      bgColor: "#fafafa",
+      bgColor: "#F6FAF7",
     },
     {
       status: "inactive",
@@ -137,7 +137,7 @@ const HomeWorkspace = () => {
                       <p className="m-0 py-0 font-Avenir-Medium text-[14px]">
                         {item.sender}
                       </p>
-                      <p className="m-0 py-0 text-brand font-Avenir text-[10px]">
+                      <p className="m-0 py-0 text-green font-Avenir text-[10px]">
                         {item.time}
                       </p>
                     </div>
