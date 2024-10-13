@@ -6,7 +6,7 @@ import GridHomeWorksapce from "../../components/Grid/GridHomeWorksapce/GridHomeW
 
 const Home = () => {
   return (
-    <div className="content">
+    <div className="content" style={{ zIndex: 3, position: "relative" }}>
       {/* <Grid1 /> */}
       {/* <Grid2 /> */}
       <GridHomeWorksapce />

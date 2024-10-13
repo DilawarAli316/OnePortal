@@ -27,11 +27,11 @@ const Apps = () => {
       icon: "/assets/Services/tiles/sign.svg",
       title: "Sign",
       description: "Send mass publications to your group, department, company",
-      category: "Microsoft",
+      category: "Workspace",
     },
     {
-      icon: "/assets/Services/tiles/connect.svg",
-      title: "Connect",
+      icon: "/assets/Services/tiles/message.svg",
+      title: "Message",
       description: "Send mass publications to your group, department, company",
       category: "Workspace",
     },
@@ -39,8 +39,15 @@ const Apps = () => {
       icon: "/assets/Services/tiles/files.svg",
       title: "Files",
       description: "Send mass publications to your group, department, company",
-      category: "Microsoft",
+      category: "Workspace",
     },
+    {
+      icon: "/assets/Services/tiles/connect.svg",
+      title: "Connect",
+      description: "Send mass publications to your group, department, company",
+      category: "Workspace",
+    },
+
     {
       icon: "/assets/Services/tiles/mail.svg",
       title: "Mail",
@@ -55,9 +62,78 @@ const Apps = () => {
     },
   ];
 
+  const microsoftService = [
+    {
+      icon: "/assets/Services/tiles/ms-mail.svg",
+      title: "MS Mail",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      category: "Microsoft",
+    },
+    {
+      icon: "/assets/Services/tiles/ms-excel.svg",
+      title: "MS Excel",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      category: "Microsoft",
+    },
+    {
+      icon: "/assets/Services/tiles/ms-word.svg",
+      title: "MS Word",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      category: "Microsoft",
+    },
+    {
+      icon: "/assets/Services/tiles/ms-powerpoint.svg",
+      title: "MS Powerpoint",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      category: "Microsoft",
+    },
+    {
+      icon: "/assets/Services/tiles/ms-sharepoint.svg",
+      title: "MS Sharepoint",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      category: "Microsoft",
+    },
+    {
+      icon: "/assets/Services/tiles/ms-onenote.svg",
+      title: "MS OneNote",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      category: "Microsoft",
+    },
+    {
+      icon: "/assets/Services/tiles/ms-calender.svg",
+      title: "MS Calendar",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      category: "Microsoft",
+    },
+    {
+      icon: "/assets/Services/tiles/ms-analytics.svg",
+      title: "MS Analytics",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      category: "Microsoft",
+    },
+    {
+      icon: "/assets/Services/tiles/ms-onedrive.svg",
+      title: "MS OneDrive",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      category: "Microsoft",
+    },
+  ];
+
   // Function to filter service cards based on the active tab
-  const filteredCards = serviceCardsData.filter(card => 
-    activeTab === "All Apps" || card.category === activeTab
+  const filteredCards = serviceCardsData.filter(
+    (card) =>
+      activeTab === "All Apps" ||
+      activeTab === "Workspace" ||
+      card.category === activeTab
   );
 
   useEffect(() => {
@@ -85,19 +161,25 @@ const Apps = () => {
                 </div>
                 <div className="flex flex-col items-start align-left">
                   <h5
-                    className={`text-[#777FA1] font-avenir-medium text-[21.65px] cursor-pointer ${activeTab === "All Apps" ? "text-black" : ""}`}
+                    className={`text-[#777FA1] font-avenir-medium text-[21.65px] cursor-pointer ${
+                      activeTab === "All Apps" ? "text-black" : ""
+                    }`}
                     onClick={() => setActiveTab("All Apps")}
                   >
                     All Apps
                   </h5>
                   <h5
-                    className={`text-[#777FA1] font-avenir-medium text-[21.65px] cursor-pointer ${activeTab === "Workspace" ? "text-black" : ""}`}
+                    className={`text-[#777FA1] font-avenir-medium text-[21.65px] cursor-pointer ${
+                      activeTab === "Workspace" ? "text-black" : ""
+                    }`}
                     onClick={() => setActiveTab("Workspace")}
                   >
                     Workspace(20)
                   </h5>
                   <h5
-                    className={`text-[#777FA1] font-avenir-medium text-[21.65px] cursor-pointer ${activeTab === "Microsoft" ? "text-black" : ""}`}
+                    className={`text-[#777FA1] font-avenir-medium text-[21.65px] cursor-pointer ${
+                      activeTab === "Microsoft" ? "text-black" : ""
+                    }`}
                     onClick={() => setActiveTab("Microsoft")}
                   >
                     Microsoft(20)
@@ -134,14 +216,23 @@ const Apps = () => {
               </div>
 
               <div className="grid grid-cols-3 gap-[20px] justify-items-center items-start mt-[30px]">
-                {filteredCards.map((card, index) => (
-                  <ServiceCard
-                    key={index}
-                    icon={card.icon}
-                    title={card.title}
-                    description={card.description}
-                  />
-                ))}
+                {activeTab === "Microsoft"
+                  ? microsoftService.map((card, index) => (
+                      <ServiceCard
+                        key={index}
+                        icon={card.icon}
+                        title={card.title}
+                        description={card.description}
+                      />
+                    ))
+                  : filteredCards.map((card, index) => (
+                      <ServiceCard
+                        key={index}
+                        icon={card.icon}
+                        title={card.title}
+                        description={card.description}
+                      />
+                    ))}
               </div>
             </div>
           </div>
@@ -251,4 +342,3 @@ const ServiceCard = ({ icon, title, description }) => {
 };
 
 export default Apps;
-

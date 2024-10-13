@@ -78,7 +78,9 @@ const resetInactivityTimer = () => {
         className="w-full"
         style={{ aspectRatio: "16/9", maxHeight: "100vh", overflow: "auto" }}
       >
-        <div className="App h-full z-50">
+        <Footer  />
+        {/* <div class="absolute z-20 bottom-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none"><div class="w-[108rem] flex-none flex justify-end"> <img  class="w-[71.75rem] flex-none max-w-none dark:hidden" decoding="async"" src="/assets/Footer-image.png" alt="Footer" /></div></div> */}
+        <div className="App h-full z-10">
           <React.Fragment>
             <Router>
               <RouteWithVideoBackground />
@@ -128,7 +130,7 @@ const resetInactivityTimer = () => {
                       exact
                       path="/home"
                       render={() => (
-                        <div className="w-full">
+                        <div className="w-full z-10">
                           <HomeHeader />
                           {/* <Home /> */}
                           <Home />
