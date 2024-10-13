@@ -270,7 +270,7 @@ const Overview = () => {
             </div>
 
             <div className="w-[279.04pz] h-[273.03px] rounded-[24.06px] transition-transform hover:scale-103">
-              <img src="/assets/Home/weathercard.svg" alt="weathercard" />
+              <img src="/assets/Home/Overview/coffeeee.svg" alt="coffe overview" />
             </div>
           </div>
 

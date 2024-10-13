@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 
 const EntitiesDirectory = () => {
   const [animate, setAnimate] = useState(false);
@@ -16,7 +17,7 @@ const EntitiesDirectory = () => {
           animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[160px]"
         }`}
       >
-        <img src="/assets/Profile/profile.svg" alt="Profile" />
+        <img src="/assets/Directories/Entities.svg" alt="Entities" />
       </div>
     </div>
   );

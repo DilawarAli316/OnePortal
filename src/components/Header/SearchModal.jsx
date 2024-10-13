@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 
 const SearchModal = ({ lgShow, setLgShow }) => {
   const modalRef = useRef();
@@ -78,7 +79,10 @@ const SearchModal = ({ lgShow, setLgShow }) => {
             </div>
 
 
-            <div className="flex flex-col gap-[19.24px]">
+            <div
+            className="flex flex-col gap-[19.24px]"
+             onClick={() => (window.location.href = "/EntitiesDirectory")}
+            >
               <div className=" flex flex-row justify-start items-center gap-[4px]">
                 <p className="!m-0 p-0 font-avenir text-[16.84px] text-gray ">
                 Entities Directory
@@ -130,10 +134,10 @@ const SearchModal = ({ lgShow, setLgShow }) => {
                 <div className="gap-[10px] flex flex-col justify-between">
                   <div>
                     <h3 className="!m-0 font-avenir-heavy text-[16.84px] text-black">
-                    Shabeeb Mohamed Melekalam
+                    Safeer Kadambodan
                     </h3>
                     <p className="!m-0 p-0 font-avenir-roman text-[12.03px]">
-                    shabeeb.mohmed@sdd.shj.ae
+                    safeer.k@sdd.shj.ae
                     </p>
                   </div>
 
