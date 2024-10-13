@@ -16,7 +16,7 @@ const Profile = () => {
           animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[160px]"
         }`}
       >
-        <img src="/assets/Home/Team/team.svg" alt="Team" />
+        <img src="/assets/Profile/profile.svg" alt="Profile" />
       </div>
     </div>
   );

@@ -34,22 +34,27 @@ import OnBoard from "./screen/OnBoard/OnBoard";
 import OnBoardHeader from "./components/OnBoardHeader/Header";
 import VideoBackground from "./components/VideoBackground/VideoBackground";
 import ScreenSaver from "./screen/ScreenSaver/ScreenSaver";
+import Profile from "./screen/Profile/Profile";
+import EntitiesDirectory from "./screen/EntitiesDirectory/EntitiesDirectory";
+import ServiceDirectory from "./screen/ServiceDirectory/ServiceDirectory";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
   const [showBackBtn, setShowBackBtn] = useState(false);
   const history = useHistory(); // Hook to programmatically navigate
-  let inactivityTimer;
 
   // Handle detecting inactivity
-  // const resetInactivityTimer = () => {
-  //   clearTimeout(inactivityTimer);
-  //   inactivityTimer = setTimeout(() => {
-  //     if (window.location.pathname !== "/") {
-  //       window.location.href = "/"; // Redirect to ScreenSaver on inactivity
-  //     }
-  //   }, 20000); // 20 seconds
-  // };
+let inactivityTimer;
+
+const resetInactivityTimer = () => {
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(() => {
+    if (window.location.pathname !== "/") {
+      window.location.href = "/"; // Redirect to ScreenSaver on inactivity
+    }
+  }, 180000); // 3 minutes (180,000 milliseconds)
+};
+
 
   // useEffect(() => {
   //   // Add event listeners for user interactions to reset the inactivity timer
@@ -148,11 +153,15 @@ function App() {
                     />
 
                     <Route exact path="/apps" component={Apps} />
-                    <Route exact path="/services" render={() => (
-                      <div className="w-full">
-                      <Services />
-                      </div>
-                    )} />
+                    <Route
+                      exact
+                      path="/services"
+                      render={() => (
+                        <div className="w-full">
+                          <Services />
+                        </div>
+                      )}
+                    />
                     <Route exact path="/Messenger" component={Messenger} />
                     <Route exact path="/chats" component={Chat} />
                     <Route
@@ -203,6 +212,35 @@ function App() {
                       )}
                     />
 
+                    <Route
+                      exact
+                      path="/profile"
+                      render={() => (
+                        <div className="w-full">
+                          <Profile />
+                        </div>
+                      )}
+                    />
+
+                    <Route
+                      exact
+                      path="/EntitiesDirectory"
+                      render={() => (
+                        <div className="w-full">
+                          <EntitiesDirectory />
+                        </div>
+                      )}
+                    />
+
+                    <Route
+                      exact
+                      path="/ServiceDirectory"
+                      render={() => (
+                        <div className="w-full">
+                          <ServiceDirectory />
+                        </div>
+                      )}
+                    />
                     {/* <Route path="*">
                       <Redirect to="/intro" />
                     </Route> */}
