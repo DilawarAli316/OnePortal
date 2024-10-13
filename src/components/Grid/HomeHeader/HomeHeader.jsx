@@ -38,7 +38,7 @@ const HomeHeader = () => {
 
         <div className="flex flex-row gap-2">
           <Nav.Link
-            href={"/"}
+            href={"/Home"}
             className={`m-0 !text-[16px] !p-[5px] ${isActive("/")}`}
           >
             Workspace

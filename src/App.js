@@ -42,30 +42,30 @@ function App() {
   let inactivityTimer;
 
   // Handle detecting inactivity
-  const resetInactivityTimer = () => {
-    clearTimeout(inactivityTimer);
-    inactivityTimer = setTimeout(() => {
-      if (window.location.pathname !== "/") {
-        window.location.href = "/"; // Redirect to ScreenSaver on inactivity
-      }
-    }, 20000); // 20 seconds
-  };
+  // const resetInactivityTimer = () => {
+  //   clearTimeout(inactivityTimer);
+  //   inactivityTimer = setTimeout(() => {
+  //     if (window.location.pathname !== "/") {
+  //       window.location.href = "/"; // Redirect to ScreenSaver on inactivity
+  //     }
+  //   }, 20000); // 20 seconds
+  // };
 
-  useEffect(() => {
-    // Add event listeners for user interactions to reset the inactivity timer
-    window.addEventListener("mousemove", resetInactivityTimer);
-    window.addEventListener("keydown", resetInactivityTimer);
+  // useEffect(() => {
+  //   // Add event listeners for user interactions to reset the inactivity timer
+  //   window.addEventListener("mousemove", resetInactivityTimer);
+  //   window.addEventListener("keydown", resetInactivityTimer);
 
-    // Set the inactivity timer when the app loads
-    resetInactivityTimer();
+  //   // Set the inactivity timer when the app loads
+  //   resetInactivityTimer();
 
-    return () => {
-      // Cleanup event listeners when component unmounts
-      window.removeEventListener("mousemove", resetInactivityTimer);
-      window.removeEventListener("keydown", resetInactivityTimer);
-      clearTimeout(inactivityTimer);
-    };
-  }, []);
+  //   return () => {
+  //     // Cleanup event listeners when component unmounts
+  //     window.removeEventListener("mousemove", resetInactivityTimer);
+  //     window.removeEventListener("keydown", resetInactivityTimer);
+  //     clearTimeout(inactivityTimer);
+  //   };
+  // }, []);
 
   return (
     <div className="App max-h-screen overflow-auto">

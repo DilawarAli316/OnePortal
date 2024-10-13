@@ -6,7 +6,7 @@ const NavigationButton = ({ btnStyle, activeIcon, inactiveIcon, isActive }) => {
   const icon = isActive ? activeIcon : inactiveIcon;
   return (
     <button
-      className={`${styles.navButton} ${btnStyle} ${isActive ? styles.active : styles.inactive}`}
+      className={`${styles.navButton} ${btnStyle} ${isActive ? styles.active : styles.inactive} flex justify-center items-center`}
       aria-label="Navigation Button"
     >
       <img

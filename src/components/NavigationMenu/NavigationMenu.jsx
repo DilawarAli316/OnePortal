@@ -7,7 +7,7 @@
 //   {
 //     activeIcon: "/assets/homeActive.svg",
 //     inactiveIcon: "/assets/homeNotactive.svg",
-//     label: "/",
+//     label: "Home",
 //   },
 //   {
 //     activeIcon: "/assets/categoriesActive.svg",
@@ -22,7 +22,7 @@
 //   {
 //     activeIcon: "/assets/MessengerActive.svg",
 //     inactiveIcon: "/assets/MessengerNotActive.svg",
-//     label: "Teams",
+//     label: "Messenger",
 //   },
 //   {
 //     activeIcon: "/assets/plus.svg",
@@ -267,7 +267,7 @@ const navigationItems = [
   {
     activeIcon: "/assets/homeActive.svg",
     inactiveIcon: "/assets/homeNotactive.svg",
-    label: "/home",
+    label: "Home",
   },
   {
     activeIcon: "/assets/categoriesActive.svg",
@@ -325,7 +325,7 @@ const SideView = ({showBackBtn}) => {
 
   return (
     <div className="w-[135px] flex flex-col justify-between items-center gap-[200px] sticky absolute z-20 top-0">
-     {showBackBtn && <Nav className="flex flex-col items-center">
+     {true && <Nav className="flex flex-col items-center">
           {navigationItemsFirst.map((item, index) => (
             <Nav.Link
               key={index}
@@ -337,15 +337,15 @@ const SideView = ({showBackBtn}) => {
               onMouseLeave={() => setHoveredLabel(null)}
               className="text-black font-medium cursor-pointer"
             >
-              <div className="flex flex-row items-center gap-[24px]">
+              <div className="flex flex-row items-center gap-[12px] font-avenir-medium text-black">
                 <NavigationButton
-                btnStyle={'flex items-center justify-center'} 
+                // btnStyle={'flex items-center justify-center'} 
                   activeIcon={item.activeIcon}
                   inactiveIcon={item.inactiveIcon}
                   isActive={activeLabel === item.label}
                 />
                 {hoveredLabel === item.label && (
-                  <div className="text-sm">{item.label}</div>
+                  <div className={styles.hoverLabel}>{item.label}</div>
                 )}
               </div>
             </Nav.Link>
@@ -380,7 +380,7 @@ const SideView = ({showBackBtn}) => {
                   isActive={activeLabel === item.label}
                 />
                 {hoveredLabel === item.label && (
-                  <div className="text-sm">{item.label}</div>
+                  <div className={styles.hoverLabel}>{item.label}</div>
                 )}
               </div>
             </Nav.Link>
@@ -407,7 +407,7 @@ const SideView = ({showBackBtn}) => {
                 isActive={activeLabel === item.label}
               />
               {hoveredLabel === item.label && (
-                <div className="text-sm">{item.label}</div>
+                <div className={styles.hoverLabel}>{item.label}</div>
               )}
             </div>
           </Nav.Link>
