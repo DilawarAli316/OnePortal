@@ -77,7 +77,7 @@ const Khub = ({setShowBackBtn}) => {
     setShowBackBtn(true)
   },[])
   return (
-    <div className="flex flex-col justify-start gap-[72.17px] items-center">
+    <div className="flex flex-col justify-start gap-[72.17px] items-center" style={{zIndex : 3, position : 'relative'}}>
       {/* <Header /> */}
       <div className="flex flex-col justify-start items-center w-full gap-[8px]">
         <div className="flex flex-row items-center">

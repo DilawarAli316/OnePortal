@@ -9,7 +9,7 @@ const TicketList = () => {
   }, []);
 
   return (
-    <div className="flex flex-col pt-[55px] items-center pb-[150px]">
+    <div className="flex flex-col pt-[55px] items-center pb-[150px]" style={{zIndex : 3, position : 'relative'}}>
       <div
         className={`w-[1508.57px] h-[849.54px] rounded-[20px] transition-all duration-[3600ms] ease-in-out ${
           animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[160px]"
